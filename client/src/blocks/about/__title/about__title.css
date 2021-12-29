@@ -1,0 +1,6 @@
+.about__title {
+  color: var(--secondaryColor);
+  font-size: 48px;
+  margin: 0 auto;
+  padding: 0 0 30px;
+}

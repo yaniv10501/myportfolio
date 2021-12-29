@@ -1,0 +1,17 @@
+.contact__form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+}

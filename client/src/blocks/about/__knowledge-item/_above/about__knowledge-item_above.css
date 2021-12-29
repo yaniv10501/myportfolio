@@ -1,0 +1,5 @@
+.about__knowledge-item_above {
+  transform: rotateX(90deg);
+  opacity: 0;
+  top: -30px;
+}

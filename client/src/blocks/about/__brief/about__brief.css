@@ -1,0 +1,14 @@
+.about__brief {
+  color: var(--secondaryColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 990px) {
+  .about__brief {
+    text-align: center;
+    padding: 0 15px 80px;
+  }
+}

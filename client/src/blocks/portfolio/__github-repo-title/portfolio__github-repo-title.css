@@ -1,0 +1,8 @@
+.portfolio__github-repo-title {
+  margin: 10px 5px;
+  color: var(--secondaryColor);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  width: 20%;
+}

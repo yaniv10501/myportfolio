@@ -1,0 +1,7 @@
+.about__knowledge-item_current {
+  z-index: 0;
+  opacity: 1;
+  background-color: var(--primaryColor);
+  transform: scale(1);
+  top: 25%;
+}

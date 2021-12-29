@@ -1,0 +1,35 @@
+.home__title {
+  z-index: 1;
+  margin: 0;
+  padding: 0 0 100px;
+  color: var(--secondaryColor);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 890px) {
+  .home__title {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home__title {
+    font-size: 34px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-device-width: 890px) and (orientation: portrait) {
+  .home__title {
+    font-size: 22px;
+    padding: 0 0 50px;
+  }
+}
+
+@media screen and (min-device-width: 375px) and (max-device-width: 890px) and (orientation: landscape) {
+  .home__title {
+    font-size: 36px;
+    padding: 0 0 50px;
+  }
+}

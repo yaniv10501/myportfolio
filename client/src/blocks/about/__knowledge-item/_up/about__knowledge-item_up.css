@@ -1,0 +1,8 @@
+.about__knowledge-item_up {
+  transform: rotateX(90deg) rotateZ(15deg) scale(.8);
+  z-index: -1;
+  background-color: var(--backgroundColor);
+  opacity: 0.8;
+  box-shadow: 0 0 20px 20px var(--secondaryColor);
+  top: -20px;
+}

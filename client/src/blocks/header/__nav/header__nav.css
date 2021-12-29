@@ -1,0 +1,10 @@
+.header__nav {
+  background-color: var(--primaryColor);
+  box-sizing: border-box;
+  z-index: 2;
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0 0 10px 5px var(--secondaryColor);
+}

@@ -1,0 +1,23 @@
+.contact__text-area {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  border-radius: 25px;
+  background-color: transparent;
+  border: 1px solid var(--secondaryColor);
+  color: var(--secondaryColor);
+  box-shadow: 0 0 2px 1px var(--secondaryColor);
+}
+
+@media screen and (max-width: 768px) {
+  .contact__text-area {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .contact__text-area {
+    width: 250px;
+  }
+}

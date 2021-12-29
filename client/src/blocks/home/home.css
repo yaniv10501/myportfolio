@@ -1,0 +1,6 @@
+.home {
+  box-sizing: border-box;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  box-shadow: 0 0 10px 5px var(--secondaryColor);
+}

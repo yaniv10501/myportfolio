@@ -1,0 +1,11 @@
+.about__knowledge-arrow {
+  border: solid var(--secondaryColor);
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 10px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about__knowledge-arrow:hover {
+  cursor: pointer;
+}

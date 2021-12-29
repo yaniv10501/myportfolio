@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'NotoSerif';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Noto_Serif/NotoSerif-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  font-style:  normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(./Noto_Serif/NotoSerif-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'Waterfall';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./Waterfall/Waterfall-Regular.ttf) format("truetype");
+}

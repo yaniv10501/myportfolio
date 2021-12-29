@@ -1,0 +1,30 @@
+.header__nav-button {
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--secondaryColor);
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 1;
+  transition: opacity .25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.header__nav-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header__nav-button {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .header__nav-button {
+    font-size: 18px;
+    padding: 5px
+  }
+}

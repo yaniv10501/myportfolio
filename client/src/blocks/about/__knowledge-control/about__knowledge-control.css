@@ -1,0 +1,15 @@
+.about__knowledge-control {
+  padding-left: 20px;
+  width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .about__knowledge-control {
+    justify-content: center;
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,11 @@
+.about__knowledge-items {
+  position: relative;
+  overflow: hidden;
+  perspective: 5px;
+  transform-style: preserve-3d;
+  padding: 0;
+  height: 150px;
+  width: 150px;
+  border: 2px solid var(--primaryColor);
+  box-shadow: 0 0 2px 2px var(--secondaryColor);
+}

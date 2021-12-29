@@ -1,0 +1,9 @@
+.contact__submit-button_active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact__submit-button_active:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

@@ -1,0 +1,8 @@
+.about__knowledge-title {
+  color: var(--secondaryColor);
+  width: 100%;
+  margin: 0;
+  padding: 0 30px 20px;
+  font-size: 28px;
+  font-weight: 600;
+}

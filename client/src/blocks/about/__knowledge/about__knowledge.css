@@ -1,0 +1,13 @@
+.about__knowledge {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .about__knowledge {
+    flex-direction: column;
+  }
+}

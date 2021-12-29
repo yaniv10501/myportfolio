@@ -1,0 +1,9 @@
+.main {
+  background-color: var(--primaryColor);
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-width: 320px;
+  position: relative;
+}
