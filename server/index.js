@@ -29,17 +29,19 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/test', (req, res, next) => {
   const ipOfSource = req.socket.remoteAddress;
-  const origin = req.header('Referer'); 
+  const origin = req.header('Referer');
   fetch('https://yanivapi.com/email', {
     headers: {
     'Origin': origin,
     },
   }).then(async (res2) => {
     res.send({ ip: ipOfSource, origin, res: await res2.json()});
+    return res.redirect('/');
   });
 });
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  return res.redirect('/');
 });
 
 app.listen(PORT, 'localhost', () => {
