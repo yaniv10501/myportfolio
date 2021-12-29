@@ -1,6 +1,6 @@
 const AuthorizationError = require('./errors/AuthorizationError');
 
-const whiteList = [''];
+const whiteList = ['https://yanivportfolio.com', 'https://www.yanivportfolio.com'];
 const corsOptions = {
   origin: (origin, callback) => {
     console.log(origin);
