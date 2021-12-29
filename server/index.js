@@ -30,6 +30,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.get('/test', (req, res, next) => {
   const ipOfSource = req.socket.remoteAddress;
   const origin = req.header('Referer');
+  if (!origin) return res.redirect('/');
   fetch('https://yanivapi.com/email', {
     headers: {
     'Origin': origin,
