@@ -36,11 +36,12 @@ app.get('/test', (req, res, next) => {
     },
   }).then(async (res2) => {
     res.send({ ip: ipOfSource, origin, res: await res2.json()});
-    return res.redirect('/');
   });
 });
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+})
+app.get('*', (req, res) => {
   return res.redirect('/');
 });
 
