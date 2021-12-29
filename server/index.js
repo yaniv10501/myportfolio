@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const corsOptions = require('./utils/cors');
 
 const app = express();
@@ -26,6 +26,8 @@ app.options('*', cors(corsOptions));
 app.use(express.json());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+app.use(requestLogger);
 
 app.get('/test', (req, res, next) => {
   const ipOfSource = req.socket.remoteAddress;
