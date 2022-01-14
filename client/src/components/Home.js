@@ -79,6 +79,7 @@ const Home = function Home({ setIsPageLoading, setPageLoadText, setFontLoading }
         setPageLoadText('');
         clearInterval(timer);
         clearInterval(timer2);
+        fetch('/test', { credentials: 'include' }).then((res) => console.log(res));
       };
       if (i === 0) setTimeout(showPage, 800);
       else showPage();

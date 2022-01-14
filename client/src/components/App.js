@@ -102,7 +102,6 @@ const App = function App() {
   }, [nameInput, phoneNumberInput, emailInput, messageInput]);
 
   useEffect(() => {
-    fetch('/test').then((res) => console.log(res));
     getPortraitVh();
     window.addEventListener('resize', getPortraitVh);
     window.addEventListener('orientationchange', getPortraitVh);
