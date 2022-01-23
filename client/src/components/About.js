@@ -61,8 +61,8 @@ function About() {
       <div className="about__text">
         <h2 className="about__title">About me</h2>
         <p className="about__brief">
-          I am a jr Full-Stack developer from Jerusalem, Israel.
-          <br />I love programming, learning, and challenging myself with new fields.
+          I am a Full-Stack Web Developer from Jerusalem, Israel.
+          <br />I love programming, challenging myself and researching new fields.
         </p>
       </div>
 
@@ -70,13 +70,13 @@ function About() {
         <div className="about__icon-container">
           <h3 className="about__icon-title">Fast</h3>
           <p className="about__icon-brief">
-            My websites have fast loading speed and smooth behavior.
+            My websites have fast loading speed and smooth preformance.
           </p>
         </div>
         <div className="about__icon-container">
           <h3 className="about__icon-title">Efficient</h3>
           <p className="about__icon-brief">
-            I like to work fast and write clean and efficient code.
+            I am a productive worker and i write clean and efficient code.
           </p>
         </div>
         <div className="about__icon-container">
@@ -88,7 +88,7 @@ function About() {
         <div className="about__icon-container">
           <h3 className="about__icon-title">Responsive</h3>
           <p className="about__icon-brief">
-            My designs fit&apos;s all screen sizes and support&apos;s mobile touch actions.
+            My designs fit all screen sizes and support mobile touch actions.
           </p>
         </div>
       </div>

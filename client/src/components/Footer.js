@@ -44,7 +44,7 @@ function Footer() {
               <a
                 className="footer__column-link link-transition"
                 target="_blank"
-                href="https://www.linkedin.com/in/yaniv-schweitzer-b6331414b"
+                href="https://www.linkedin.com/in/yaniv-schweitzer"
                 rel="noreferrer"
               >
                 <img

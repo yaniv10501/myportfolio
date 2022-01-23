@@ -108,9 +108,9 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     >
       <div className="home__background">
         <h1 className="home__title">
-          Hey, my name isYaniv Schweitzer,
+          Hey, my name is Yaniv Schweitzer.
           <br />
-          Welcome to my portfolio Website.
+          Welcome to my portfolio website.
         </h1>
         <div
           className="home__arrow"
