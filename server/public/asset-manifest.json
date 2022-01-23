@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.16c52d43.css",
-    "main.js": "./static/js/main.999c3d63.js",
+    "main.css": "./static/css/main.d422ca2c.css",
+    "main.js": "./static/js/main.e12d7879.js",
     "static/media/IMG_6334_edited_edited.jpg": "./static/media/IMG_6334_edited_edited.c51e64178f76ce195ae3.jpg",
     "static/media/Waterfall-Regular.ttf": "./static/media/Waterfall-Regular.650eece1be5fb234ac28.ttf",
     "static/media/NotoSerif-Bold.ttf": "./static/media/NotoSerif-Bold.6f4fe161fca0181b0bee.ttf",
@@ -9,13 +9,12 @@
     "static/media/how-to-study-eng-cover.png": "./static/media/how-to-study-eng-cover.81937223aea676b8bb61.png",
     "static/media/across-usa-cover.png": "./static/media/across-usa-cover.1f43f61695aaaeb8237f.png",
     "static/media/header-background-tablet.jpg": "./static/media/header-background-tablet.8fb0c8d20aa370b061e5.jpg",
-    "static/media/Untitled.svg": "./static/media/Untitled.ed3a59d8476b22a22cda0dd06d195c7e.svg",
     "index.html": "./index.html",
-    "main.16c52d43.css.map": "./static/css/main.16c52d43.css.map",
-    "main.999c3d63.js.map": "./static/js/main.999c3d63.js.map"
+    "main.d422ca2c.css.map": "./static/css/main.d422ca2c.css.map",
+    "main.e12d7879.js.map": "./static/js/main.e12d7879.js.map"
   },
   "entrypoints": [
-    "static/css/main.16c52d43.css",
-    "static/js/main.999c3d63.js"
+    "static/css/main.d422ca2c.css",
+    "static/js/main.e12d7879.js"
   ]
 }

@@ -1,14 +1,9 @@
 /* eslint-disable no-param-reassign */
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FontLoader from '../utils/FontLoader';
-import { pop } from '../utils/pop';
-import vectorA from '../images/Untitled.svg';
 
 function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
-  const mouseRef = useRef();
-  const mouseRef2 = useRef();
-  const mouseRef3 = useRef();
   const handleArrowClick = (event) => {
     const arrowElement = event.target;
     const animation = arrowElement.animate(
@@ -30,26 +25,6 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     aboutElement.scrollIntoView({ behavior: 'smooth' });
   };
   const handleMouseMove = (event) => {
-    const mouseItem = mouseRef.current;
-    const mouseItem2 = mouseRef2.current;
-    const mouseItem3 = mouseRef3.current;
-    const makeAnimation = (mouseElement) => {
-      const animation = mouseElement.animate(
-        [
-          {
-            transform: 'rotateZ(180deg)',
-          },
-          {
-            transform: 'rotateZ(360deg)',
-          },
-        ],
-        { duration: 400, easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)' }
-      );
-      animation.play();
-    };
-    makeAnimation(mouseItem);
-    makeAnimation(mouseItem2);
-    makeAnimation(mouseItem3);
     const {
       clientX,
       clientY,
@@ -59,12 +34,6 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     } = event;
     const x = clientX - 250;
     const y = clientY - 250;
-    mouseItem.style.left = `${x}px`;
-    mouseItem.style.top = `${y}px`;
-    mouseItem2.style.left = `${x}px`;
-    mouseItem2.style.top = `${y}px`;
-    mouseItem3.style.left = `${x}px`;
-    mouseItem3.style.top = `${y}px`;
     console.log(x, y, scrollHeight, scrollWidth);
   };
   useEffect(() => {
@@ -132,49 +101,12 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     <section
       className="home"
       id="home"
-      onClick={pop}
       onMouseMove={handleMouseMove}
       role="button"
       onKeyDown={() => {}}
       tabIndex={0}
     >
       <div className="home__background">
-        <div
-          ref={mouseRef}
-          className="home__mouse-move"
-          style={{
-            position: 'absolute',
-            height: '500px',
-            width: '500px',
-            backgroundImage: `url('${vectorA}')`,
-            transition:
-              'top 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), left 0.5s cubic-bezier(0.215, 0.610, 0.355, 1)',
-          }}
-        />
-        <div
-          ref={mouseRef2}
-          className="home__mouse-move"
-          style={{
-            position: 'absolute',
-            height: '500px',
-            width: '500px',
-            backgroundImage: `url('${vectorA}')`,
-            transition:
-              'top 0.6s cubic-bezier(0.215, 0.610, 0.355, 1), left 0.6s cubic-bezier(0.215, 0.610, 0.355, 1)',
-          }}
-        />
-        <div
-          ref={mouseRef3}
-          className="home__mouse-move"
-          style={{
-            position: 'absolute',
-            height: '500px',
-            width: '500px',
-            backgroundImage: `url('${vectorA}')`,
-            transition:
-              'top 0.7s cubic-bezier(0.215, 0.610, 0.355, 1), left 0.7s cubic-bezier(0.215, 0.610, 0.355, 1)',
-          }}
-        />
         <h1 className="home__title">
           Hey, my name isYaniv Schweitzer,
           <br />
