@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { moveKnowledgeDown, moveKnowledgeUp } from '../utils/knowledge';
 
-const About = function About() {
+function About() {
   const [timer, setTimer] = useState();
   const [activeFunc, setActiveFunc] = useState({});
   const [knowledgeSpeed, setKnowledgeSpeed] = useState(50);
@@ -143,6 +143,6 @@ const About = function About() {
       </div>
     </section>
   );
-};
+}
 
 export default About;

@@ -1,0 +1,5 @@
+.portfolio__github-repos {
+  width: 100%;
+  background-color: var(--primaryColor);
+  padding: 0 16px 40px 16px;
+}

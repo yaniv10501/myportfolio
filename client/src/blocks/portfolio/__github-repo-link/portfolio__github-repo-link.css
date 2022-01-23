@@ -1,6 +1,7 @@
 .portfolio__github-repo-link {
   color: var(--secondaryColor);
   font-size: 22px;
+  line-height: 36px;
   font-weight: 700;
   text-decoration: none;
   text-overflow: ellipsis;

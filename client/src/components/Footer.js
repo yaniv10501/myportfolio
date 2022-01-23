@@ -1,8 +1,8 @@
 import React from 'react';
-import gitHubIcon from '../images/GitHub-Mark-Light-32px.png';
+import gitHubIcon from '../images/GitHub-Mark-32px.png';
 import linkedinIcon from '../images/linkedin.png';
 
-const Footer = function Footer() {
+function Footer() {
   return (
     <footer className="footer">
       <div className="footer__columns">
@@ -44,7 +44,7 @@ const Footer = function Footer() {
               <a
                 className="footer__column-link link-transition"
                 target="_blank"
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/in/yaniv-schweitzer-b6331414b"
                 rel="noreferrer"
               >
                 <img
@@ -64,6 +64,6 @@ const Footer = function Footer() {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

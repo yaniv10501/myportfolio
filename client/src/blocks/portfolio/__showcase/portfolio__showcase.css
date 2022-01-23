@@ -1,21 +1,28 @@
 .portfolio__showcase {
+  box-shadow: 0 0 5px 1px var(--backgroundColor);
   perspective: 1000px;
-  perspective-origin: 40% 20%;
-  width: 65%;
+  perspective-origin: 30% 20%;
+  width: 70%;
+  max-width: 1400px;
   height: 750px;
   margin: 0 auto;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: auto;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .portfolio__showcase {
-    height: 550px;
+    height: 600px;
   }
 }
 
 @media screen and (max-width: 1080px) {
   .portfolio__showcase {
     height: 500px;
+    margin: 0 0 0 120px;
   }
 }
 
@@ -28,12 +35,14 @@
 @media screen and (max-width: 700px) {
   .portfolio__showcase {
     height: 300px;
+    margin: 0 0 0 80px;
   }
 }
 
 @media screen and (max-width: 560px) {
   .portfolio__showcase {
     height: 250px;
+    margin: 0 0 0 50px;
   }
 }
 

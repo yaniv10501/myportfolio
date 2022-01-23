@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Header = function Header() {
+function Header() {
   const handleScroll = () => {
     const homeElement = document.querySelector('.home');
     const navElement = document.querySelector('.header__nav');
@@ -42,6 +42,6 @@ const Header = function Header() {
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

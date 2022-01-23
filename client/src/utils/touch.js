@@ -14,8 +14,7 @@ const handleTouchEnd = (event) => {
     document.querySelector(`.portfolio__showcase-item_${event.target.id.toLowerCase()}`) ||
     event.target;
   if (!portfolioControlElement || !portfolioControlElement.style) return;
-  portfolioControlElement.style.transform = 'rotateY(30deg) translate3d(0, 0, -200px)';
-  portfolioControlElement.style.left = portfolioControlElement.id;
+  portfolioControlElement.style.transform = 'rotateY(20deg) translate3d(0, 0, -200px)';
   portfolioControlElement.style.zIndex = 0;
 };
 

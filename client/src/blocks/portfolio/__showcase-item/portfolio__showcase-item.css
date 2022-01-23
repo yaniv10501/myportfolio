@@ -4,10 +4,12 @@
   background-size: cover;
   height: 650px;
   width: 650px;
-  transform: rotateY(30deg) translate3d(0, 0, -200px);
-  position: absolute;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: rotateY(20deg) translate3d(0, 0, -200px);
+  transition: transform 0.5s cubic-bezier(0.08, 0.2, 0.2, 1);
+}
+
+.portfolio__showcase-item:first-child {
+  margin-left: 100px;
 }
 
 .portfolio__showcase-item:hover {
@@ -15,7 +17,7 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
   .portfolio__showcase-item {
     height: 550px;
     width: 550px;

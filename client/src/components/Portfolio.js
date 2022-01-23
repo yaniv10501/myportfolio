@@ -2,11 +2,8 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect } from 'react';
 import { handleTouchStart, handleTouchEnd } from '../utils/touch';
-import useWindowDimensions from '../utils/useWindowDimensions';
 
-const Portfolio = function Portfolio() {
-  const { windowWidth } = useWindowDimensions();
-
+function Portfolio() {
   const handlePortfolioItemMouseMove = (event, element) => {
     const showCaseItem = event.target || element;
     const elementHeight = showCaseItem.offsetHeight;
@@ -20,14 +17,12 @@ const Portfolio = function Portfolio() {
     const firstY = (elementHeight - positionY - elementHeight / 2) / elementHeight;
     const targetX = firstX * firstX * firstX * 100;
     const targetY = firstY * firstY * firstY * 120;
-    showCaseItem.style.transform = `rotateY(${targetX}deg) rotateX(${targetY}deg) translate3d(-150px, 0, 50px)`;
-    showCaseItem.style.left = `${Number(showCaseItem.id.replace('px', '')) + 10}px`;
+    showCaseItem.style.transform = `rotateY(${targetX}deg) rotateX(${targetY}deg) translate3d(-100px, 0, 0)`;
     showCaseItem.style.zIndex = 1;
   };
 
   const handlePortfolioItemMouseOut = (element) => {
-    element.style.transform = 'rotateY(30deg) translate3d(0, 0, -200px)';
-    element.style.left = element.id;
+    element.style.transform = 'rotateY(20deg) translate3d(0, 0, -200px)';
     element.style.zIndex = 0;
   };
 
@@ -47,6 +42,10 @@ const Portfolio = function Portfolio() {
         window.open('https://yaniv.students.nomoreparties.site', '_blank');
         break;
       }
+      case 'portfolio__showcase-item_news-explorer': {
+        window.open('https://yaniv-news-app.students.nomoreparties.sbs', '_blank');
+        break;
+      }
       default:
         break;
     }
@@ -64,6 +63,47 @@ const Portfolio = function Portfolio() {
     window.open(repoLink, '_blank');
   };
 
+  const handleArrowClick = (event) => {
+    const arrowElement = event.target;
+    const animation = arrowElement.animate(
+      [
+        {
+          transform: 'scale(0.7)',
+        },
+        {
+          transform: 'scale(0.6)',
+        },
+        {
+          transform: 'scale(0.7)',
+        },
+      ],
+      { duration: 400, easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)' }
+    );
+    const portfolioElement = document.querySelector('.portfolio__showcase');
+    const { scrollLeft } = portfolioElement;
+    const portfolioWidth = portfolioElement.clientWidth;
+    console.log(portfolioElement.clientWidth, portfolioElement.scrollLeft);
+    switch (arrowElement.id) {
+      case 'forwards':
+        portfolioElement.scroll({
+          top: 0,
+          left: scrollLeft + (portfolioWidth / 2 + 100),
+          behavior: 'smooth',
+        });
+        break;
+      case 'backwards':
+        portfolioElement.scroll({
+          top: 0,
+          left: portfolioElement.scrollLeft - (portfolioWidth / 2 + 100),
+          behavior: 'smooth',
+        });
+        break;
+      default:
+        break;
+    }
+    animation.play();
+  };
+
   const handlePortfolioItemTouchStart = (event) =>
     handleTouchStart(event, handlePortfolioItemMouseMove);
 
@@ -73,19 +113,12 @@ const Portfolio = function Portfolio() {
   const handlePortfolioItemTouchEnd = (event) => handleTouchEnd(event);
 
   useEffect(() => {
-    let leftValue = 300;
-    if (windowWidth > 1300) leftValue = 300;
-    if (windowWidth <= 1300 && windowWidth > 768) leftValue = 200;
-    if (windowWidth <= 768 && windowWidth > 370) leftValue = 100;
-    if (windowWidth <= 370) leftValue = 80;
-
-    document.querySelectorAll('.portfolio__showcase-item').forEach((element, index) => {
-      element.style.left = `${index === 0 ? 50 : index * leftValue + 50}px`;
+    document.querySelectorAll('.portfolio__showcase-item').forEach((element) => {
       element.id = element.style.left;
       element.onmousemove = (event) => handlePortfolioItemMouseMove(event, element);
       element.onmouseout = () => handlePortfolioItemMouseOut(element);
     });
-  }, [windowWidth]);
+  }, []);
 
   return (
     <section className="portfolio" id="portfolio">
@@ -120,6 +153,36 @@ const Portfolio = function Portfolio() {
           onKeyDown={() => {}}
           role="button"
           tabIndex={0}
+        />
+        <div
+          className="portfolio__showcase-item portfolio__showcase-item_news-explorer"
+          onClick={handlePortfolioItemClick}
+          onTouchStart={handlePortfolioItemTouchStart}
+          onTouchMove={handlePortfolioItemTouchMove}
+          onTouchEnd={handlePortfolioItemTouchEnd}
+          onKeyDown={() => {}}
+          role="button"
+          tabIndex={0}
+        />
+      </div>
+      <div className="portfolio__arrows">
+        <div
+          className="home__arrow portfolio__arrow portfolio__arrow_backwards"
+          id="backwards"
+          onClick={handleArrowClick}
+          onKeyDown={() => {}}
+          role="button"
+          tabIndex={0}
+          label="down arrow"
+        />
+        <div
+          className="home__arrow portfolio__arrow portfolio__arrow_forwards"
+          id="forwards"
+          onClick={handleArrowClick}
+          onKeyDown={() => {}}
+          role="button"
+          tabIndex={0}
+          label="down arrow"
         />
       </div>
       <div className="portfolio__github-repos">
@@ -176,10 +239,44 @@ const Portfolio = function Portfolio() {
               https://github.com/yaniv10501/react-around-api-full
             </a>
           </div>
+          <div
+            className="portfolio__github-repos-item"
+            onClick={handleRepoItemClick}
+            onKeyDown={() => {}}
+            role="button"
+            tabIndex={0}
+          >
+            <p className="portfolio__github-repo-title">News Exolorer FrontEnd GitHub repository</p>
+            <a
+              className="portfolio__github-repo-link"
+              href="https://github.com/yaniv10501/news-explorer-frontend"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/yaniv10501/news-explorer-frontend
+            </a>
+          </div>
+          <div
+            className="portfolio__github-repos-item"
+            onClick={handleRepoItemClick}
+            onKeyDown={() => {}}
+            role="button"
+            tabIndex={0}
+          >
+            <p className="portfolio__github-repo-title">News Explorer API GitHub repository</p>
+            <a
+              className="portfolio__github-repo-link"
+              href="https://github.com/yaniv10501/news-explorer-api"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://github.com/yaniv10501/news-explorer-api
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Portfolio;

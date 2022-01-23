@@ -32,7 +32,7 @@ const moveKnowledgeUp = () => {
   belowItem.classList.replace(itemBelowClass, itemDownClass);
   bottomItem.classList.replace(itemBottomClass, itemBelowClass);
   topItem.classList.replace(itemTopClass, itemBottomClass);
-  downItem.style.background = 'var(--primaryColor)';
+  downItem.style.background = 'var(--secondaryColor)';
   setColor('var(--backgroundColor)', currentItem, belowItem);
 };
 const moveKnowledgeDown = () => {
@@ -65,7 +65,7 @@ const moveKnowledgeDown = () => {
   downItem.classList.replace(itemDownClass, itemBelowClass);
   bottomItem.classList.replace(itemBottomClass, itemTopClass);
   belowItem.classList.replace(itemBelowClass, itemBottomClass);
-  upItem.style.background = 'var(--primaryColor)';
+  upItem.style.background = 'var(--secondaryColor)';
   setColor('var(--backgroundColor)', aboveItem, currentItem);
 };
 

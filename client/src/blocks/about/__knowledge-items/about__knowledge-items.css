@@ -6,6 +6,6 @@
   padding: 0;
   height: 150px;
   width: 150px;
-  border: 2px solid var(--primaryColor);
-  box-shadow: 0 0 2px 2px var(--secondaryColor);
+  border: 2px solid var(--secondaryColor);
+  box-shadow: 0 0 2px 2px var(--primaryColor);
 }
