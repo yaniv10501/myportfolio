@@ -24,18 +24,18 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     const aboutElement = document.querySelector('.about');
     aboutElement.scrollIntoView({ behavior: 'smooth' });
   };
-  const handleMouseMove = (event) => {
-    const {
-      clientX,
-      clientY,
-      target: {
-        parentElement: { scrollHeight, scrollWidth },
-      },
-    } = event;
-    const x = clientX - 250;
-    const y = clientY - 250;
-    console.log(x, y, scrollHeight, scrollWidth);
-  };
+  // const handleMouseMove = (event) => {
+  //   const {
+  //     clientX,
+  //     clientY,
+  //     target: {
+  //       parentElement: { scrollHeight, scrollWidth },
+  //     },
+  //   } = event;
+  //   const x = clientX - 250;
+  //   const y = clientY - 250;
+  //   console.log(x, y, scrollHeight, scrollWidth);
+  // };
   useEffect(() => {
     const fontLoader = new FontLoader(
       ['NotoSerif'],
@@ -101,7 +101,7 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     <section
       className="home"
       id="home"
-      onMouseMove={handleMouseMove}
+      // onMouseMove={handleMouseMove}
       role="button"
       onKeyDown={() => {}}
       tabIndex={0}

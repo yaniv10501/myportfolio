@@ -82,7 +82,6 @@ function Portfolio() {
     const portfolioElement = document.querySelector('.portfolio__showcase');
     const { scrollLeft } = portfolioElement;
     const portfolioWidth = portfolioElement.clientWidth;
-    console.log(portfolioElement.clientWidth, portfolioElement.scrollLeft);
     switch (arrowElement.id) {
       case 'forwards':
         portfolioElement.scroll({
