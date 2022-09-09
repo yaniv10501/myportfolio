@@ -4,3 +4,9 @@
   margin: 0 auto;
   padding: 0 0 30px;
 }
+
+@media screen and (max-width: 625px) {
+  .about__title {
+    font-size: 42px;
+  }
+}

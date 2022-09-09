@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from '../contexts/ThemeContext';
 import gitHubIconPng from '../images/GitHub-Mark-32px.png';
 import gitHubIcon from '../images/GitHub-Mark-32px.webp';
+import gitHubIconPngLight from '../images/GitHub-Mark-Light-32px.png';
+import gitHubIconLight from '../images/GitHub-Mark-Light-32px.webp';
 import linkedinIconPng from '../images/linkedin.png';
 import linkedinIcon from '../images/linkedin.webp';
 import FlexImg from './FlexImg';
 
 function Footer() {
+  const { theme } = useContext(ThemeContext);
   return (
     <footer className="footer">
       <div className="footer__columns">
@@ -38,12 +42,21 @@ function Footer() {
                 href="https://github.com/yaniv10501"
                 rel="noreferrer"
               >
-                <FlexImg
-                  className="footer__social-icons"
-                  src={gitHubIcon}
-                  srcPng={gitHubIconPng}
-                  alt="github logo"
-                />
+                {theme === 'light' ? (
+                  <FlexImg
+                    className="footer__social-icons"
+                    src={gitHubIcon}
+                    srcPng={gitHubIconPng}
+                    alt="github logo"
+                  />
+                ) : (
+                  <FlexImg
+                    className="footer__social-icons"
+                    src={gitHubIconLight}
+                    srcPng={gitHubIconPngLight}
+                    alt="github logo"
+                  />
+                )}
                 GitHub
               </a>
             </li>

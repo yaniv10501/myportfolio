@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.b6ef70de.css",
-    "main.js": "./static/js/main.619f4c58.js",
+    "main.css": "./static/css/main.6f4ec8b6.css",
+    "main.js": "./static/js/main.1546f4d7.js",
     "static/media/IMG_6334_edited_edited.jpg": "./static/media/IMG_6334_edited_edited.c51e64178f76ce195ae3.jpg",
     "static/media/Waterfall-Regular.ttf": "./static/media/Waterfall-Regular.650eece1be5fb234ac28.ttf",
     "static/media/NotoSerif-Bold.ttf": "./static/media/NotoSerif-Bold.6f4fe161fca0181b0bee.ttf",
@@ -17,13 +17,16 @@
     "static/media/header-background-tablet.webp": "./static/media/header-background-tablet.519b3c2ecebf78c02ec9.webp",
     "static/media/around-cover.webp": "./static/media/around-cover.84ea8e8b54d1074ffc0a.webp",
     "index.html": "./index.html",
+    "static/media/dark.svg": "./static/media/dark.fb988334f5471035854348bbe181f461.svg",
+    "static/media/light.svg": "./static/media/light.519222831432013d704dfbdbba2fbc67.svg",
     "static/media/linkedin.webp": "./static/media/linkedin.07a8721f35ff2aa1e0a9.webp",
     "static/media/GitHub-Mark-32px.webp": "./static/media/GitHub-Mark-32px.a12dd5316abbfa13f4f5.webp",
-    "main.b6ef70de.css.map": "./static/css/main.b6ef70de.css.map",
-    "main.619f4c58.js.map": "./static/js/main.619f4c58.js.map"
+    "static/media/GitHub-Mark-Light-32px.webp": "./static/media/GitHub-Mark-Light-32px.a27de733f25b505619bb.webp",
+    "main.6f4ec8b6.css.map": "./static/css/main.6f4ec8b6.css.map",
+    "main.1546f4d7.js.map": "./static/js/main.1546f4d7.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6ef70de.css",
-    "static/js/main.619f4c58.js"
+    "static/css/main.6f4ec8b6.css",
+    "static/js/main.1546f4d7.js"
   ]
 }

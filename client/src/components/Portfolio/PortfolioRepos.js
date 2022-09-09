@@ -49,7 +49,7 @@ export default function PortfolioRepos() {
             key={repoLink}
             title={repoTitle}
             link={repoLink}
-            onClick={handleRepoItemClick}
+            handleRepoItemClick={handleRepoItemClick}
           />
         ))}
       </div>

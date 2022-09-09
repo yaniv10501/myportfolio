@@ -1,6 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import ThemeContext from '../../contexts/ThemeContext';
+import lightTheme from '../../images/light.svg';
+import darkTheme from '../../images/dark.svg';
 
 function Header() {
+  const { theme, handleSetTheme } = useContext(ThemeContext);
   const handleScroll = () => {
     const homeElement = document.querySelector('.home');
     const navElement = document.querySelector('.header__nav');
@@ -27,6 +31,15 @@ function Header() {
   return (
     <header className="header">
       <nav className="header__nav">
+        <button className="header__theme-button" type="button" onClick={handleSetTheme}>
+          <img
+            className="header__theme-icon"
+            src={theme === 'light' ? lightTheme : darkTheme}
+            alt="theme"
+            height={30}
+            width={30}
+          />
+        </button>
         <a className="header__nav-button" href="#home">
           Home
         </a>

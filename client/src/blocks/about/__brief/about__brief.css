@@ -19,3 +19,9 @@
     padding: 0 15px 80px;
   }
 }
+
+@media screen and (max-width: 625px) {
+  .about__brief {
+    font-size: 22px;
+  }
+}
