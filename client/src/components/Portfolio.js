@@ -39,11 +39,11 @@ function Portfolio() {
         break;
       }
       case 'portfolio__showcase-item_around': {
-        window.open('https://yaniv-around.students.nomoreparties.sbs', '_blank');
+        window.open('https://around.yanivportfolio.com', '_blank');
         break;
       }
       case 'portfolio__showcase-item_news-explorer': {
-        window.open('https://yaniv-news-app.students.nomoreparties.sbs', '_blank');
+        window.open('https://news-explorer.yanivportfolio.com', '_blank');
         break;
       }
       case 'portfolio__showcase-item_90degreegames': {
