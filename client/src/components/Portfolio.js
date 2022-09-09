@@ -39,11 +39,15 @@ function Portfolio() {
         break;
       }
       case 'portfolio__showcase-item_around': {
-        window.open('https://yaniv.students.nomoreparties.site', '_blank');
+        window.open('https://yaniv-around.students.nomoreparties.sbs', '_blank');
         break;
       }
       case 'portfolio__showcase-item_news-explorer': {
         window.open('https://yaniv-news-app.students.nomoreparties.sbs', '_blank');
+        break;
+      }
+      case 'portfolio__showcase-item_90degreegames': {
+        window.open('https://90degreegames.com', '_blank');
         break;
       }
       default:
@@ -81,20 +85,19 @@ function Portfolio() {
     );
     const portfolioElement = document.querySelector('.portfolio__showcase');
     const { scrollLeft } = portfolioElement;
-    const portfolioWidth = portfolioElement.clientWidth;
-    console.log(portfolioElement.clientWidth, portfolioElement.scrollLeft);
+    const portfolioScroll = portfolioElement.scrollWidth;
     switch (arrowElement.id) {
       case 'forwards':
         portfolioElement.scroll({
           top: 0,
-          left: scrollLeft + (portfolioWidth / 2 + 100),
+          left: scrollLeft + portfolioScroll / 3,
           behavior: 'smooth',
         });
         break;
       case 'backwards':
         portfolioElement.scroll({
           top: 0,
-          left: portfolioElement.scrollLeft - (portfolioWidth / 2 + 100),
+          left: portfolioElement.scrollLeft - portfolioScroll / 3,
           behavior: 'smooth',
         });
         break;
@@ -125,7 +128,7 @@ function Portfolio() {
       <h2 className="portfolio__title">My Portfolio</h2>
       <div className="portfolio__showcase">
         <div
-          className="portfolio__showcase-item portfolio__showcase-item_study"
+          className="portfolio__showcase-item portfolio__showcase-item_90degreegames"
           onClick={handlePortfolioItemClick}
           onTouchStart={handlePortfolioItemTouchStart}
           onTouchMove={handlePortfolioItemTouchMove}
@@ -135,7 +138,17 @@ function Portfolio() {
           tabIndex={0}
         />
         <div
-          className="portfolio__showcase-item portfolio__showcase-item_across"
+          className="portfolio__showcase-item portfolio__showcase-item_news-explorer"
+          onClick={handlePortfolioItemClick}
+          onTouchStart={handlePortfolioItemTouchStart}
+          onTouchMove={handlePortfolioItemTouchMove}
+          onTouchEnd={handlePortfolioItemTouchEnd}
+          onKeyDown={() => {}}
+          role="button"
+          tabIndex={0}
+        />
+        <div
+          className="portfolio__showcase-item portfolio__showcase-item_study"
           onClick={handlePortfolioItemClick}
           onTouchStart={handlePortfolioItemTouchStart}
           onTouchMove={handlePortfolioItemTouchMove}
@@ -155,7 +168,7 @@ function Portfolio() {
           tabIndex={0}
         />
         <div
-          className="portfolio__showcase-item portfolio__showcase-item_news-explorer"
+          className="portfolio__showcase-item portfolio__showcase-item_across"
           onClick={handlePortfolioItemClick}
           onTouchStart={handlePortfolioItemTouchStart}
           onTouchMove={handlePortfolioItemTouchMove}

@@ -128,7 +128,7 @@ function About() {
         <div className="about__knowledge-items">
           <p className="about__knowledge-item about__knowledge-item_top">HTML</p>
 
-          <p className="about__knowledge-item about__knowledge-item_above">Next</p>
+          <p className="about__knowledge-item about__knowledge-item_above">Python</p>
 
           <p className="about__knowledge-item about__knowledge-item_up">CSS</p>
 
@@ -138,7 +138,7 @@ function About() {
 
           <p className="about__knowledge-item about__knowledge-item_below">Express</p>
 
-          <p className="about__knowledge-item about__knowledge-item_bottom">JS</p>
+          <p className="about__knowledge-item about__knowledge-item_bottom">ES5/ES6</p>
         </div>
       </div>
     </section>

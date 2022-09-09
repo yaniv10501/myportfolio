@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FontLoader from '../utils/FontLoader';
+import { initParticles } from '../utils/particles';
 
 function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
   const handleArrowClick = (event) => {
@@ -24,18 +25,18 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
     const aboutElement = document.querySelector('.about');
     aboutElement.scrollIntoView({ behavior: 'smooth' });
   };
-  const handleMouseMove = (event) => {
-    const {
-      clientX,
-      clientY,
-      target: {
-        parentElement: { scrollHeight, scrollWidth },
-      },
-    } = event;
-    const x = clientX - 250;
-    const y = clientY - 250;
-    console.log(x, y, scrollHeight, scrollWidth);
-  };
+  // const handleMouseMove = (event) => {
+  //   const {
+  //     clientX,
+  //     clientY,
+  //     target: {
+  //       parentElement: { scrollHeight, scrollWidth },
+  //     },
+  //   } = event;
+  //   const x = clientX - 250;
+  //   const y = clientY - 250;
+  //   console.log(x, y, scrollHeight, scrollWidth);
+  // };
   useEffect(() => {
     const fontLoader = new FontLoader(
       ['NotoSerif'],
@@ -48,9 +49,6 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
             // Reached the timeout but not all fonts were loaded
             console.log(error.message);
             console.log(error.notLoadedFonts);
-          } else {
-            // All fonts were loaded
-            console.log('all fonts were loaded');
           }
         },
       },
@@ -90,22 +88,15 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
         setPageLoadText('');
         clearInterval(timer);
         clearInterval(timer2);
-        fetch('/test', { credentials: 'include' }).then((res) => console.log(res));
       };
       if (i === 0) setTimeout(showPage, 800);
       else showPage();
     };
     img.src = homeBackgroundUrl;
+    initParticles();
   }, []);
   return (
-    <section
-      className="home"
-      id="home"
-      onMouseMove={handleMouseMove}
-      role="button"
-      onKeyDown={() => {}}
-      tabIndex={0}
-    >
+    <section className="home" id="home">
       <div className="home__background">
         <h1 className="home__title">
           Hey, my name is Yaniv Schweitzer.

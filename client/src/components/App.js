@@ -8,7 +8,6 @@ import About from './About';
 import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
-import { initParticles } from '../utils/particles';
 import getPortraitVh from '../utils/costumVh';
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
         });
       });
     });
-    initParticles();
   }, []);
   return (
     <div className={fontLoading ? 'page page_hidden' : 'page'}>

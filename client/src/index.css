@@ -157,6 +157,7 @@ input[type='range']:focus::-ms-fill-upper {
 @import url('./blocks/portfolio/__showcase-item/_around/portfolio__showcase-item_around.css');
 @import url('./blocks/portfolio/__showcase-item/_study/portfolio__showcase-item_study.css');
 @import url('./blocks/portfolio/__showcase-item/_news-explorer/portfolio__showcase-item_news-explorer.css');
+@import url('./blocks/portfolio/__showcase-item/_90degreegames/portfolio__showcase-item_90degreegames.css');
 @import url('./blocks/portfolio/__github-repos/portfolio__github-repos.css');
 @import url('./blocks/portfolio/__github-repos-title/portfolio__github-repos-title.css');
 @import url('./blocks/portfolio/__github-repos-grid/portfolio__github-repos-grid.css');

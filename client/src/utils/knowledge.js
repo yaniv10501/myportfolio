@@ -1,7 +1,17 @@
 import classNames from '../assets/classNames';
 import { setColor } from './setColors';
 
-const knowledgeList = ['HTML', 'Next', 'CSS', 'React', 'NodeJS', 'Express', 'JS', 'Mongo', 'SQL'];
+const knowledgeList = [
+  'HTML',
+  'Python',
+  'CSS',
+  'React',
+  'NodeJS',
+  'Express',
+  'ES5/ES6',
+  'Mongo',
+  'SQL',
+];
 const moveKnowledgeUp = () => {
   const {
     itemTopClass,
