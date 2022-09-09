@@ -11,6 +11,8 @@ const knowledgeList = [
   'ES5/ES6',
   'Mongo',
   'SQL',
+  'CI/CD',
+  'Git',
 ];
 const moveKnowledgeUp = () => {
   const {

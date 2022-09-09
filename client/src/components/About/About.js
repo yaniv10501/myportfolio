@@ -1,7 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useState } from 'react';
-import { moveKnowledgeDown, moveKnowledgeUp } from '../utils/knowledge';
+import { moveKnowledgeDown, moveKnowledgeUp } from '../../utils/knowledge';
+import AboutIcons from './AboutIcons';
+import AboutText from './AboutText';
 
 function About() {
   const [timer, setTimer] = useState();
@@ -58,40 +60,8 @@ function About() {
   }, []);
   return (
     <section className="about" id="about">
-      <div className="about__text">
-        <h2 className="about__title">About me</h2>
-        <p className="about__brief">
-          I am a Full-Stack Web Developer from Jerusalem, Israel.
-          <br />I love programming, challenging myself and researching new fields.
-        </p>
-      </div>
-
-      <div className="about__icons">
-        <div className="about__icon-container">
-          <h3 className="about__icon-title">Fast</h3>
-          <p className="about__icon-brief">
-            My websites have fast loading speed and smooth preformance.
-          </p>
-        </div>
-        <div className="about__icon-container">
-          <h3 className="about__icon-title">Efficient</h3>
-          <p className="about__icon-brief">
-            I am a productive worker and i write clean and efficient code.
-          </p>
-        </div>
-        <div className="about__icon-container">
-          <h3 className="about__icon-title">Dynamic</h3>
-          <p className="about__icon-brief">
-            I love using animations to bring the websites to life.
-          </p>
-        </div>
-        <div className="about__icon-container">
-          <h3 className="about__icon-title">Responsive</h3>
-          <p className="about__icon-brief">
-            My designs fit all screen sizes and support mobile touch actions.
-          </p>
-        </div>
-      </div>
+      <AboutText />
+      <AboutIcons />
 
       <div className="about__knowledge">
         <div className="about__knowledge-control">
@@ -126,11 +96,11 @@ function About() {
           </label>
         </div>
         <div className="about__knowledge-items">
-          <p className="about__knowledge-item about__knowledge-item_top">HTML</p>
+          <p className="about__knowledge-item about__knowledge-item_top">Git</p>
 
           <p className="about__knowledge-item about__knowledge-item_above">Python</p>
 
-          <p className="about__knowledge-item about__knowledge-item_up">CSS</p>
+          <p className="about__knowledge-item about__knowledge-item_up">CI/CD</p>
 
           <p className="about__knowledge-item about__knowledge-item_current">React</p>
 
