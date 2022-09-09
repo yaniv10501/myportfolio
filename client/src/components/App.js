@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 import Home from './Home';
 import Header from './Header';
@@ -9,8 +9,12 @@ import Portfolio from './Portfolio';
 import Contact from './Contact';
 import Footer from './Footer';
 import getPortraitVh from '../utils/costumVh';
+import isWebpSupport from '../utils/isWebpSupport';
+import IsWebpSupportContext from '../contexts/IsWebpSupportContext';
 
 function App() {
+  const isWebpSupportDevice = useMemo(() => isWebpSupport(), []);
+
   smoothscroll.polyfill();
 
   const [fontLoading, setFontLoading] = useState(true);
@@ -33,28 +37,30 @@ function App() {
     });
   }, []);
   return (
-    <div className={fontLoading ? 'page page_hidden' : 'page'}>
-      <div className={isPageLoading ? 'page-spinner' : 'page-spinner page-spinner_hidden'}>
-        <div className="page-spinner__container">
-          <i />
+    <IsWebpSupportContext.Provider value={isWebpSupportDevice}>
+      <div className={fontLoading ? 'page page_hidden' : 'page'}>
+        <div className={isPageLoading ? 'page-spinner' : 'page-spinner page-spinner_hidden'}>
+          <div className="page-spinner__container">
+            <i />
+          </div>
+          <p className="page-spinner__text">{pageLoadText}</p>
         </div>
-        <p className="page-spinner__text">{pageLoadText}</p>
+        <div className={isPageLoading ? 'content content_hidden' : 'content'}>
+          <Home
+            setIsPageLoading={setIsPageLoading}
+            setPageLoadText={setPageLoadText}
+            setFontLoading={setFontLoading}
+          />
+          <main className="main">
+            <Header />
+            <About />
+            <Portfolio />
+            <Contact />
+            <Footer />
+          </main>
+        </div>
       </div>
-      <div className={isPageLoading ? 'content content_hidden' : 'content'}>
-        <Home
-          setIsPageLoading={setIsPageLoading}
-          setPageLoadText={setPageLoadText}
-          setFontLoading={setFontLoading}
-        />
-        <main className="main">
-          <Header />
-          <About />
-          <Portfolio />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
-    </div>
+    </IsWebpSupportContext.Provider>
   );
 }
 

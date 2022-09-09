@@ -1,6 +1,9 @@
 import React from 'react';
-import gitHubIcon from '../images/GitHub-Mark-32px.png';
-import linkedinIcon from '../images/linkedin.png';
+import gitHubIconPng from '../images/GitHub-Mark-32px.png';
+import gitHubIcon from '../images/GitHub-Mark-32px.webp';
+import linkedinIconPng from '../images/linkedin.png';
+import linkedinIcon from '../images/linkedin.webp';
+import FlexImg from './FlexImg';
 
 function Footer() {
   return (
@@ -35,7 +38,12 @@ function Footer() {
                 href="https://github.com/yaniv10501"
                 rel="noreferrer"
               >
-                <img className="footer__social-icons" src={gitHubIcon} alt="Facebook white logo" />
+                <FlexImg
+                  className="footer__social-icons"
+                  src={gitHubIcon}
+                  srcPng={gitHubIconPng}
+                  alt="github logo"
+                />
                 GitHub
               </a>
             </li>
@@ -47,10 +55,11 @@ function Footer() {
                 href="https://www.linkedin.com/in/yaniv-schweitzer"
                 rel="noreferrer"
               >
-                <img
+                <FlexImg
                   className="footer__social-icons"
                   src={linkedinIcon}
-                  alt="Instagram white logo"
+                  srcPng={linkedinIconPng}
+                  alt="linkedin logo"
                 />
                 Linkedin
               </a>

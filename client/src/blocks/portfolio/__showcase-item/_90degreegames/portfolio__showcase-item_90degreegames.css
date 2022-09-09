@@ -1,5 +1,5 @@
 .portfolio__showcase-item_90degreegames {
-  background-image: url('../../../../images/90degreegames-logo.png');
+  background-image: url('../../../../images/90degreegames-logo.webp'), url('../../../../images/90degreegames-logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--secondaryColor);

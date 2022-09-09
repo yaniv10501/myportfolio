@@ -1,10 +1,14 @@
 /* eslint-disable no-param-reassign */
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FontLoader from '../utils/FontLoader';
 import { initParticles } from '../utils/particles';
+import IsWebpSupportContext from '../contexts/IsWebpSupportContext';
+import homeBackgroundjpg from '../images/IMG_6334_edited_edited.jpg';
+import homeBackground from '../images/IMG_6334_edited_edited.webp';
 
 function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
+  const { isWebpSupport } = useContext(IsWebpSupportContext);
   const handleArrowClick = (event) => {
     const arrowElement = event.target;
     const animation = arrowElement.animate(
@@ -77,9 +81,7 @@ function Home({ setIsPageLoading, setPageLoadText, setFontLoading }) {
       loadTime -= 1;
       document.documentElement.style.setProperty('--loadEm', `${loadTime / 100}em`);
     }, 10);
-    const homeBackground = document.querySelector('.home__background');
-    const homeBackgroundSrc = window.getComputedStyle(homeBackground, ':before').backgroundImage;
-    const homeBackgroundUrl = homeBackgroundSrc.match(/https?:\/\/[\w\d.:/]+/)[0];
+    const homeBackgroundUrl = isWebpSupport ? homeBackground : homeBackgroundjpg;
     const img = new Image();
     img.onload = () => {
       const showPage = () => {

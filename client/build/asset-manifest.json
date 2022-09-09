@@ -1,21 +1,29 @@
 {
   "files": {
-    "main.css": "./static/css/main.7559d1d3.css",
-    "main.js": "./static/js/main.c9fe47b8.js",
+    "main.css": "./static/css/main.017d2947.css",
+    "main.js": "./static/js/main.259e306e.js",
     "static/media/IMG_6334_edited_edited.jpg": "./static/media/IMG_6334_edited_edited.c51e64178f76ce195ae3.jpg",
     "static/media/Waterfall-Regular.ttf": "./static/media/Waterfall-Regular.650eece1be5fb234ac28.ttf",
     "static/media/NotoSerif-Bold.ttf": "./static/media/NotoSerif-Bold.6f4fe161fca0181b0bee.ttf",
     "static/media/NotoSerif-Regular.ttf": "./static/media/NotoSerif-Regular.f0f09dd7eed2ae0d3d0b.ttf",
     "static/media/how-to-study-eng-cover.png": "./static/media/how-to-study-eng-cover.81937223aea676b8bb61.png",
+    "static/media/IMG_6334_edited_edited.webp": "./static/media/IMG_6334_edited_edited.b7151eccceed76206ba0.webp",
     "static/media/across-usa-cover.png": "./static/media/across-usa-cover.1f43f61695aaaeb8237f.png",
     "static/media/header-background-tablet.jpg": "./static/media/header-background-tablet.8fb0c8d20aa370b061e5.jpg",
     "static/media/90degreegames-logo.png": "./static/media/90degreegames-logo.6606041c6057a20349c5.png",
+    "static/media/across-usa-cover.webp": "./static/media/across-usa-cover.1d8a63f437a2250d96fb.webp",
+    "static/media/how-to-study-eng-cover.webp": "./static/media/how-to-study-eng-cover.e5c6af5ad9544a5dbf67.webp",
+    "static/media/90degreegames-logo.webp": "./static/media/90degreegames-logo.70ac7acedccca2ec5f48.webp",
+    "static/media/header-background-tablet.webp": "./static/media/header-background-tablet.519b3c2ecebf78c02ec9.webp",
+    "static/media/around-cover.webp": "./static/media/around-cover.84ea8e8b54d1074ffc0a.webp",
     "index.html": "./index.html",
-    "main.7559d1d3.css.map": "./static/css/main.7559d1d3.css.map",
-    "main.c9fe47b8.js.map": "./static/js/main.c9fe47b8.js.map"
+    "static/media/linkedin.webp": "./static/media/linkedin.07a8721f35ff2aa1e0a9.webp",
+    "static/media/GitHub-Mark-32px.webp": "./static/media/GitHub-Mark-32px.a12dd5316abbfa13f4f5.webp",
+    "main.017d2947.css.map": "./static/css/main.017d2947.css.map",
+    "main.259e306e.js.map": "./static/js/main.259e306e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7559d1d3.css",
-    "static/js/main.c9fe47b8.js"
+    "static/css/main.017d2947.css",
+    "static/js/main.259e306e.js"
   ]
 }
