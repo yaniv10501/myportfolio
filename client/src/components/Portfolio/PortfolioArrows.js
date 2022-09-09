@@ -43,8 +43,8 @@ export default function PortfolioArrows() {
   };
   return (
     <div className="portfolio__arrows">
-      <PortfolioArrow direction="backwards" onClick={handleArrowClick} />
-      <PortfolioArrow direction="forwards" onClick={handleArrowClick} />
+      <PortfolioArrow direction="backwards" handleArrowClick={handleArrowClick} />
+      <PortfolioArrow direction="forwards" handleArrowClick={handleArrowClick} />
     </div>
   );
 }
