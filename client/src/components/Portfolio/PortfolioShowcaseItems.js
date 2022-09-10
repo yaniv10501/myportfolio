@@ -60,7 +60,7 @@ export default function PortfolioShowcaseItems() {
           className = firstParent.className;
           classList = firstParent.classList;
         }
-        switch (className.match(/item_[0-9a-zA-Z]+/)[0]) {
+        switch (className.match(/item_[0-9a-zA-Z-]+/)[0]) {
           case 'item_study': {
             window.open('https://yaniv10501.github.io/web_project_1/', '_blank');
             break;
