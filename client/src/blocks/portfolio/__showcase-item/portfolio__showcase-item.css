@@ -42,22 +42,22 @@
 .portfolio__showcase-item-details-text {
   margin: 0;
   padding: 0 10px;
-  color: var(--primaryColor);
+  color: var(--white);
   font-size: 42px;
   font-weight: 700;
-  text-shadow: -2px 2px 3px var(--secondaryColor);
+  text-shadow: -2px 2px 3px var(--black);
 }
 
 .portfolio__showcase-item-go {
   transform: rotateY(180deg);
-  box-shadow: 0 0 2px 3px var(--primaryColor);
+  box-shadow: 0 0 2px 3px var(--white);
   max-width: 50%;
   min-width: 50px;
   margin: 0 auto;
 }
 
 .portfolio__showcase-item-go:hover {
-  box-shadow: 0 0 3px 4px var(--primaryColor);
+  box-shadow: 0 0 3px 4px var(--white);
 }
 
 .portfolio__showcase-item-go:hover .portfolio__showcase-item-go-text {
@@ -65,7 +65,7 @@
 }
 
 .portfolio__showcase-item-go-text {
-  color: var(--primaryColor);
+  color: var(--white);
   text-align: center;
   padding: 10px 0;
   font-size: 22px;

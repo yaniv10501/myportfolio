@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function PortfolioShowcaseItem(props) {
@@ -9,13 +9,27 @@ export default function PortfolioShowcaseItem(props) {
     handlePortfolioItemTouchStart,
     handlePortfolioItemTouchMove,
     handlePortfolioItemTouchEnd,
+    activeItem,
+    setActiveItem,
   } = props;
+  const itemRef = useRef();
   const [isClicked, setIsClicked] = useState(false);
   const onClick = (event) => {
+    if (isClicked) {
+      setActiveItem('');
+    } else {
+      setActiveItem(name);
+    }
     setIsClicked(handlePortfolioItemClick(event));
   };
+  useEffect(() => {
+    if (activeItem !== name && isClicked) {
+      setIsClicked(handlePortfolioItemClick({ target: itemRef.current }));
+    }
+  }, [activeItem]);
   return (
     <div
+      ref={itemRef}
       className={`portfolio__showcase-item portfolio__showcase-item_${name}`}
       onClick={onClick}
       onTouchStart={handlePortfolioItemTouchStart}
@@ -57,4 +71,6 @@ PortfolioShowcaseItem.propTypes = {
   handlePortfolioItemTouchStart: PropTypes.func.isRequired,
   handlePortfolioItemTouchMove: PropTypes.func.isRequired,
   handlePortfolioItemTouchEnd: PropTypes.func.isRequired,
+  activeItem: PropTypes.string.isRequired,
+  setActiveItem: PropTypes.func.isRequired,
 };

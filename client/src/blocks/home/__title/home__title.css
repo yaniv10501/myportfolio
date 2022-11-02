@@ -2,7 +2,7 @@
   z-index: 1;
   margin: 0;
   padding: 0 0 100px;
-  color: var(--primaryColor);
+  color: var(--white);
   font-size: 52px;
   font-weight: 700;
 }

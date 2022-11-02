@@ -1,6 +1,8 @@
 :root {
   --primaryColor: #f4f5f4;
   --secondaryColor: #080708;
+  --white: #f4f5f4;
+  --black: #080708;
   --backgroundColor: #696773;
   --successColor: #3fa34d;
   --failColor: #f50010;

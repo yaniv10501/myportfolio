@@ -1,11 +1,12 @@
 /* eslint-disable no-param-reassign */
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { handleTouchEnd, handleTouchStart } from '../../utils/touch';
 import PortfolioShowcaseItem from './PortfolioShowcaseItem';
 
 const items = ['90degreegames', 'news-explorer', 'around', 'study', 'across'];
 
 export default function PortfolioShowcaseItems() {
+  const [activeItem, setActiveItem] = useState('');
   const handlePortfolioItemMouseMove = (event, element) => {
     const showCaseItem = event.target || element;
     const elementHeight = showCaseItem.offsetHeight;
@@ -126,6 +127,8 @@ export default function PortfolioShowcaseItems() {
             handlePortfolioItemTouchStart={handlePortfolioItemTouchStart}
             handlePortfolioItemTouchMove={handlePortfolioItemTouchMove}
             handlePortfolioItemTouchEnd={handlePortfolioItemTouchEnd}
+            activeItem={activeItem}
+            setActiveItem={setActiveItem}
           />
         ))}
     </div>
