@@ -68,6 +68,7 @@ export default function AboutKnowledgeWidget() {
           onClick={handleKnowledgeUp}
           onKeyDown={() => {}}
           tabIndex={0}
+          aria-label="next arrow"
         />
         <div
           className={styles['about__knowledge-arrow'] + ' ' + styles['about__knowledge-arrow_down']}
@@ -75,6 +76,7 @@ export default function AboutKnowledgeWidget() {
           onClick={handleKnowledgeDown}
           onKeyDown={() => {}}
           tabIndex={0}
+          aria-label="previous arrow"
         />
       </div>
       <label className={styles['about__knowledge-speed-label']} htmlFor="speed-range">
