@@ -1,14 +1,16 @@
-import React, { useContext, useEffect } from 'react';
-import ThemeContext from '../../contexts/ThemeContext';
-import lightTheme from '../../images/light.svg';
-import darkTheme from '../../images/dark.svg';
+import React, { useEffect } from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/header/header.module.css';
+import homeStyles from '../../blocks/home/home.module.css';
+import pageStyles from '../../blocks/page/page.module.css';
+import HeaderNav from './HeaderNav';
 
 function Header() {
-  const { theme, handleSetTheme } = useContext(ThemeContext);
+  useStyles(styles, pageStyles, homeStyles);
   const handleScroll = () => {
-    const homeElement = document.querySelector('.home');
-    const navElement = document.querySelector('.header__nav');
-    const mainElement = document.querySelector('.main');
+    const homeElement = document.querySelector(`.${homeStyles['home']}`);
+    const navElement = document.querySelector(`.${styles['header__nav']}`);
+    const mainElement = document.querySelector(`.${pageStyles['main']}`);
     const { top, height } = navElement.getBoundingClientRect();
     const mainPosition = mainElement.getBoundingClientRect();
     if (top <= 0) {
@@ -29,30 +31,8 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <header className="header">
-      <nav className="header__nav">
-        <button className="header__theme-button" type="button" onClick={handleSetTheme}>
-          <img
-            className="header__theme-icon"
-            src={theme === 'light' ? lightTheme : darkTheme}
-            alt="theme"
-            height={30}
-            width={30}
-          />
-        </button>
-        <a className="header__nav-button" href="#home">
-          Home
-        </a>
-        <a className="header__nav-button" href="#about">
-          About
-        </a>
-        <a className="header__nav-button" href="#portfolio">
-          Portfolio
-        </a>
-        <a className="header__nav-button" href="#contact">
-          Contact
-        </a>
-      </nav>
+    <header className={styles['header']}>
+      <HeaderNav />
     </header>
   );
 }

@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
 const express = require('express');
 const { green, cyan, red } = require('chalk');
 const path = require('path');
@@ -63,7 +65,9 @@ const addBuildRoutes = (validPaths) => {
       if (Array.isArray(validPaths)) {
         validPaths.forEach((validPath) => {
           app.get(`/${validPath}`, (req, res) => {
-            res.sendFile(path.join(__dirname, `../build/${validPath}.html`));
+            res.sendFile(
+              path.join(__dirname, `../build/${validPath === 'home' ? 'index' : validPath}.html`)
+            );
           });
           logger.log(cyan('Added Route: ') + green(`/${validPath}`));
         });
@@ -101,7 +105,7 @@ const addBuildRoutes = (validPaths) => {
         resolve();
       });
     };
-    if (server.close) {
+    if (server?.close) {
       server.close();
       logger.log(cyan('Initializing Server: ') + green('Closed out remaining connections'));
       addMoreRoutes();

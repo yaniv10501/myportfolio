@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useState } from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/about/about.module.css';
 import { moveKnowledgeDown, moveKnowledgeUp } from '../../utils/knowledge';
 
 export default function AboutKnowledgeWidget() {
+  useStyles(styles);
   const [timer, setTimer] = useState();
   const [activeFunc, setActiveFunc] = useState({});
   const [knowledgeSpeed, setKnowledgeSpeed] = useState(50);
@@ -56,28 +59,28 @@ export default function AboutKnowledgeWidget() {
     setActiveFunc({ func: moveKnowledgeDown });
   }, []);
   return (
-    <div className="about__knowledge-control">
-      <h3 className="about__knowledge-title">My Knowledge</h3>
-      <div className="about__knowledge-buttons">
+    <div className={styles['about__knowledge-control']}>
+      <h3 className={styles['about__knowledge-title']}>My Knowledge</h3>
+      <div className={styles['about__knowledge-buttons']}>
         <div
-          className="about__knowledge-arrow about__knowledge-arrow_up"
+          className={styles['about__knowledge-arrow'] + ' ' + styles['about__knowledge-arrow_up']}
           role="button"
           onClick={handleKnowledgeUp}
           onKeyDown={() => {}}
           tabIndex={0}
         />
         <div
-          className="about__knowledge-arrow about__knowledge-arrow_down"
+          className={styles['about__knowledge-arrow'] + ' ' + styles['about__knowledge-arrow_down']}
           role="button"
           onClick={handleKnowledgeDown}
           onKeyDown={() => {}}
           tabIndex={0}
         />
       </div>
-      <label className="about__knowledge-speed-label" htmlFor="speed-range">
+      <label className={styles['about__knowledge-speed-label']} htmlFor="speed-range">
         Adjust Speed
         <input
-          className="about__knowledge-speed"
+          className={styles['about__knowledge-speed']}
           name="speed-range"
           id="speed-range"
           type="range"

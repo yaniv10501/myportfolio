@@ -49,11 +49,12 @@ const fetchPage = async (pagePath, page, options) => {
       let isAtBottom = false;
       await autoScroll(page);
       while (!isAtBottom) {
-        let time = Number(new Date().getTime()) / 1000;
+        let time = Number(new Date().getTime());
         // eslint-disable-next-line no-await-in-loop
         await page.waitForNetworkIdle();
-        time = Number(new Date().getTime()) / 1000 - time;
-        if (time > 2) {
+        time = Number(new Date().getTime()) - time;
+        logger.log(time);
+        if (time > 550) {
           // eslint-disable-next-line no-await-in-loop
           await autoScroll(page);
         } else {
@@ -126,7 +127,8 @@ const inlineCriticalCss = async (to, page, browser) => {
 
 const copyPageHtml = async (pageName, page) => {
   logger.log(cyan('Crawling: ') + green(`Generating static ${pageName || 'index.html'} page...`));
-  const content = await page.content();
+  let content = await page.content();
+  content = content.replace(/http:\/\/localhost:3500/g, 'https://90degreegames.com');
   logger.log(cyan('Crawling: ') + green(`Saving static ${pageName || 'index.html'} page...`));
   const filePath = pageName ? pageName.split('/') : [];
   if (filePath.length > 1) {
@@ -150,28 +152,95 @@ const buildCrawl = async (to) => {
   const page = await launchPuppeteer();
 
   await fetchPage(to, page);
+  // await inlineCriticalCss(to, page);
   await copyPageHtml(null, page);
-  await page.close();
+  // await page.close();
   // Create route for every link in index page
   // |
   // V
-  // const validPaths = await getLinks();
-  // let chain = Promise.resolve(true);
-  // validPaths.forEach((validPath, index) => {
-  //   chain = chain.then(() =>
-  //     fetchPage(validPath).then(() => {
-  //       validPaths[index] = validPath.replace('http://localhost:3500/', '');
-  //       return copyPageHtml(`${validPath.replace('http://localhost:3500/', '')}.html`);
-  //     })
-  //   );
-  // });
-  // await chain.then(() => {
-  //   logger.log(cyan('Crawled: ') + green('All static pages was successfully Saved!'));
-  // });
-  // return validPaths;
+  const validPaths = await getLinks(page);
+  let chain = Promise.resolve(true);
+  validPaths.forEach((validPath, index) => {
+    chain = chain.then(() =>
+      fetchPage(`${validPath}?loading=forever`, page).then(async () => {
+        const validPathName = validPath.replace('http://localhost:3500/', '');
+        validPaths[index] = validPathName;
+        // await inlineCriticalCss(`${to}/${validPathName}`, page);
+        return copyPageHtml(`${validPathName}.html`, page);
+      })
+    );
+  });
+  await chain.then(() => {
+    logger.log(cyan('Crawled: ') + green('All static pages was successfully Saved!'));
+  });
+  return validPaths;
   // END OF Create route for every link in index page
+};
+
+const redditCrawl = async () => {
+  const page = await launchPuppeteer();
+  await fetchPage('https://www.reddit.com/user/90DegreeGames/', page, { scrollDown: true });
+  const redditPosts = await page.evaluate(() => {
+    window.scroll({ top: window.page });
+    const tempPosts = [];
+    Array.from(document.querySelectorAll("a,link[rel='alternate']")).forEach((anchor) => {
+      let a = anchor;
+      if (a.href.baseVal) {
+        a = document.createElement('a');
+        a.href = anchor.href.baseVal;
+      }
+      a.href = a.href.replace('reddit', 'redditmedia');
+      if (
+        !tempPosts.some(
+          (tempPost) =>
+            tempPost.replace('https://www.redditmedia.com/', '').split('/')[4] ===
+            a.href.replace('https://www.redditmedia.com/', '').split('/')[4]
+        ) &&
+        a.href.includes('/comments/') &&
+        !a.href.includes('/comment/') &&
+        !a.href.includes('/user')
+      ) {
+        tempPosts.push(a.href);
+      }
+    });
+    return tempPosts;
+  });
+  fs.writeFileSync('redditPosts.json', JSON.stringify(redditPosts));
+  logger.log(cyan('Crawling: ') + green(`Saved posts to redditPosts.json`));
+  page.close();
+};
+
+const addRedditPosts = async () => {
+  const {
+    adminUrl = 'https://90degreegames.com',
+    adminUser = 'user',
+    adminPassword = 'password',
+  } = JSON.parse(fs.readFileSync('secrets.json', { encoding: 'utf-8' }));
+  const page = await launchPuppeteer();
+  await fetchPage(adminUrl, page);
+  await page.waitForNetworkIdle();
+  await page.type('.login__input_user', adminUser, { delay: 50 });
+  await page.type('.login__input_password', adminPassword, { delay: 50 });
+  await page.waitForTimeout(500);
+  await page.click('.admin-login__submit-button');
+  await page.waitForTimeout(500);
+  await page.waitForNetworkIdle();
+  await page.click('.admin-menu-button[name=Edit]');
+  const currentPosts = JSON.parse(fs.readFileSync('redditPosts.json', { encoding: 'utf-8' }));
+  let chain = Promise.resolve(true);
+  currentPosts.reverse().forEach((currentPost) => {
+    const asyncFunc = async () => {
+      await page.type('.admin__form-input[name=postUrl]', currentPost, { delay: 50 });
+      await page.waitForTimeout(500);
+      await page.click('.admin__form-submit-button');
+      await page.waitForNetworkIdle();
+    };
+    chain = chain.then(asyncFunc);
+  });
 };
 
 module.exports = {
   buildCrawl,
+  redditCrawl,
+  addRedditPosts,
 };

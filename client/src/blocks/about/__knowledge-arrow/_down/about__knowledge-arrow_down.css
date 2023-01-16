@@ -1,7 +1,0 @@
-.about__knowledge-arrow_down {
-  transform: rotate(45deg);
-}
-
-.about__knowledge-arrow_down:hover {
-  transform: rotate(45deg) scale(1.2);
-}

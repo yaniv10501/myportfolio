@@ -1,104 +1,113 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const nodeExternals = require('webpack-node-externals');
-
-/*-------------------------------------------------*/
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  // webpack optimization mode
-  mode: 'development' === process.env.NODE_ENV ? 'development' : 'production',
-
-  externals: [nodeExternals()],
-
-  // entry files
-  entry: [
-    './src/index.js', // react
-  ],
-
-  // output files and chunks
+  entry: './src/index.js',
+  mode: 'production',
+  devtool: false,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'build/[name].js',
+    filename: 'static/js/[name].[contenthash].js',
+    path: path.resolve(__dirname, 'build'),
   },
-
-  // module/loaders configuration
   module: {
+    // exclude node_modules
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /.s?css$/,
+        exclude: /node_modules/,
         use: [
+          'isomorphic-style-loader',
           {
-            loader: 'file-loader',
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              esModule: false,
+            },
           },
+          'postcss-loader',
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|webp|webm)$/i,
+        exclude: /node_modules/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/media/[name].[contenthash][ext]',
+        },
+      },
+      { test: /\.svg/, exclude: /node_modules/, type: 'asset/inline' },
     ],
   },
-
-  // webpack plugins
   plugins: [
-    // extract css to external stylesheet file
-    new MiniCssExtractPlugin({
-      filename: 'build/styles.css',
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'public', 'index.html'),
+      inject: true,
+      publicPath: '/',
+      minify: true,
     }),
-
-    // prepare HTML file with assets
-    new HTMLWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(__dirname, 'src/index.html'),
-      minify: false,
-    }),
-
-    // copy static files from `src` to `dist`
+    // new MiniCssExtractPlugin({
+    //   filename: 'static/css/[name].[contenthash].css',
+    // }),
     new CopyWebpackPlugin({
       patterns: [
+        // {
+        //   from: path.resolve(__dirname, 'src/images'),
+        //   to: path.resolve(__dirname, 'build/static/media'),
+        // },
         {
-          from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
+          from: path.resolve(__dirname, 'public'),
+          to: path.resolve(__dirname, 'build'),
+          filter: (resourcePath) =>
+            resourcePath !== path.resolve(__dirname, 'public', 'index.html'),
         },
       ],
     }),
   ],
-
-  // resolve files configuration
-  resolve: {
-    // file extensions
-    extensions: ['.js', '.jsx', '.scss'],
-  },
-
-  // webpack optimizations
   optimization: {
     splitChunks: {
       cacheGroups: {
         default: false,
         vendors: false,
-
         vendor: {
           chunks: 'all', // both : consider sync + async chunks for evaluation
           name: 'vendor', // name of chunk file
-          test: /node_modules/, // test regular expression
+          test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+        },
+        recharts: {
+          chunks: 'all', // both : consider sync + async chunks for evaluation
+          name: 'recharts', // name of chunk file
+          test: /[\\/]node_modules[\\/](recharts)[\\/]/,
         },
       },
     },
+    minimize: true,
+    minimizer: [
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: {
+          map: {
+            inline: false,
+            annotation: true,
+          },
+        },
+      }),
+      new TerserPlugin({
+        parallel: true,
+      }),
+    ],
   },
-
-  // development server configuration
-  devServer: {
-    port: 8088,
-    historyApiFallback: true,
+  // pass all js files through Babel
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
   },
-
-  // generate source map
-  devtool: 'source-map',
 };

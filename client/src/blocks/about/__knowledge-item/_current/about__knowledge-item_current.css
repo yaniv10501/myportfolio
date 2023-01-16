@@ -1,9 +1,0 @@
-.about__knowledge-item_current {
-  z-index: 0;
-  opacity: 1;
-  padding: 5px 0;
-  background-color: var(--secondaryColor);
-  transform: scale(1);
-  top: 25%;
-  box-shadow: 0 0 10px 1px var(--secondaryColor);
-}

@@ -1,10 +1,16 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/portfolio/portfolio.module.css';
+import PortfolioShowcaseItemDetails from './PortfolioShowcaseItemDetails';
+import FlexImg from '../FlexImg';
 
 export default function PortfolioShowcaseItem(props) {
   const {
     name,
+    src,
+    srcPng,
     handlePortfolioItemClick,
     handlePortfolioItemTouchStart,
     handlePortfolioItemTouchMove,
@@ -12,6 +18,7 @@ export default function PortfolioShowcaseItem(props) {
     activeItem,
     setActiveItem,
   } = props;
+  useStyles(styles);
   const itemRef = useRef();
   const [isClicked, setIsClicked] = useState(false);
   const onClick = (event) => {
@@ -30,7 +37,7 @@ export default function PortfolioShowcaseItem(props) {
   return (
     <div
       ref={itemRef}
-      className={`portfolio__showcase-item portfolio__showcase-item_${name}`}
+      className={`${styles['portfolio__showcase-item']}`}
       onClick={onClick}
       onTouchStart={handlePortfolioItemTouchStart}
       onTouchMove={handlePortfolioItemTouchMove}
@@ -38,26 +45,34 @@ export default function PortfolioShowcaseItem(props) {
       onKeyDown={() => {}}
       role="button"
       tabIndex={0}
+      aria-label={`${name} item details`}
     >
+      <FlexImg
+        className={
+          styles['portfolio__showcase-item-image'] +
+          ' ' +
+          styles[`portfolio__showcase-item-image_${name}`]
+        }
+        src={src}
+        srcPng={srcPng}
+        alt={name}
+        width={450}
+        height={650}
+      />
       {isClicked && (
         <>
-          <div className="portfolio__showcase-item-details">
-            <p className="portfolio__showcase-item-details-text">Frontend - React</p>
-          </div>
-          <div className="portfolio__showcase-item-details">
-            <p className="portfolio__showcase-item-details-text">Backend - NodeJS</p>
-          </div>
-          <div className="portfolio__showcase-item-details">
-            <p className="portfolio__showcase-item-details-text">Server - Nginx</p>
-          </div>
-          <div className="portfolio__showcase-item-details">
-            <p className="portfolio__showcase-item-details-text">DB - Mongo</p>
-          </div>
-          <div className="portfolio__showcase-item-details">
-            <p className="portfolio__showcase-item-details-text">CI/CD - Node Worker</p>
-          </div>
-          <div className="portfolio__showcase-item-go">
-            <h3 className="portfolio__showcase-item-go-text">Go to Website</h3>
+          <PortfolioShowcaseItemDetails details="Frontend - React" />
+          <PortfolioShowcaseItemDetails details="Backend - NodeJS" />
+          <PortfolioShowcaseItemDetails details="Server - Nginx" />
+          <PortfolioShowcaseItemDetails details="DB - Mongo" />
+          <PortfolioShowcaseItemDetails details="CI/CD - Node Worker" />
+          <div
+            className={styles['portfolio__showcase-item-go']}
+            role="button"
+            tabIndex={0}
+            aria-label={`${name} website`}
+          >
+            <h3 className={styles['portfolio__showcase-item-go-text']}>Go to Website</h3>
           </div>
         </>
       )}
@@ -67,6 +82,8 @@ export default function PortfolioShowcaseItem(props) {
 
 PortfolioShowcaseItem.propTypes = {
   name: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  srcPng: PropTypes.string.isRequired,
   handlePortfolioItemClick: PropTypes.func.isRequired,
   handlePortfolioItemTouchStart: PropTypes.func.isRequired,
   handlePortfolioItemTouchMove: PropTypes.func.isRequired,

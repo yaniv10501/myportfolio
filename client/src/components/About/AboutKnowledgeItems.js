@@ -1,4 +1,6 @@
 import React from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/about/about.module.css';
 import AboutKnowledgeItem from './AboutKnowledgeItem';
 
 const items = [
@@ -33,8 +35,9 @@ const items = [
 ];
 
 export default function AboutKnowledgeItems() {
+  useStyles(styles);
   return (
-    <div className="about__knowledge-items">
+    <div className={styles['about__knowledge-items']}>
       {items.map(({ position, title }) => (
         <AboutKnowledgeItem key={title} title={title} position={position} />
       ))}

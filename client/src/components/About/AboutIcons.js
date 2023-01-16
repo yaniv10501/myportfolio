@@ -1,4 +1,6 @@
 import React from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/about/about.module.css';
 import AboutIcon from './AboutIcon';
 
 const icons = [
@@ -21,8 +23,9 @@ const icons = [
 ];
 
 export default function AboutIcons() {
+  useStyles(styles);
   return (
-    <div className="about__icons">
+    <div className={styles['about__icons']}>
       {icons.map(({ title, text }) => (
         <AboutIcon key={title} title={title} text={text} />
       ))}

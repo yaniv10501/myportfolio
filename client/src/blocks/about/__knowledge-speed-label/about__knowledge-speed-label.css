@@ -1,8 +1,0 @@
-.about__knowledge-speed-label {
-  color: var(--secondaryColor);
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0 auto 0 10px;
-  display: flex;
-  flex-direction: column;
-}

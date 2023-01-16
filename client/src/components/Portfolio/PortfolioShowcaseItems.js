@@ -1,11 +1,30 @@
 /* eslint-disable no-param-reassign */
 import React, { useCallback, useEffect, useState } from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/portfolio/portfolio.module.css';
 import { handleTouchEnd, handleTouchStart } from '../../utils/touch';
 import PortfolioShowcaseItem from './PortfolioShowcaseItem';
+import degreegamesLogo from '../../images/90degreegames-logo.webp';
+import degreegamesLogoPng from '../../images/90degreegames-logo.png';
+import newsExplorerLogo from '../../images/header-background-tablet.webp';
+import newsExplorerLogoPng from '../../images/header-background-tablet.jpg';
+import aroundLogo from '../../images/around-cover.webp';
+import aroundLogoPng from '../../images/around-cover.png';
+import studyLogo from '../../images/how-to-study-eng-cover.webp';
+import studyLogoPng from '../../images/how-to-study-eng-cover.png';
+import acrossLogo from '../../images/across-usa-cover.webp';
+import acrossLogoPng from '../../images/across-usa-cover.png';
 
-const items = ['90degreegames', 'news-explorer', 'around', 'study', 'across'];
+const items = [
+  { name: '90degreegames', src: degreegamesLogo, srcPng: degreegamesLogoPng },
+  { name: 'news-explorer', src: newsExplorerLogo, srcPng: newsExplorerLogoPng },
+  { name: 'around', src: aroundLogo, srcPng: aroundLogoPng },
+  { name: 'study', src: studyLogo, srcPng: studyLogoPng },
+  { name: 'across', src: acrossLogo, srcPng: acrossLogoPng },
+];
 
 export default function PortfolioShowcaseItems() {
+  useStyles(styles);
   const [activeItem, setActiveItem] = useState('');
   const handlePortfolioItemMouseMove = (event, element) => {
     const showCaseItem = event.target || element;
@@ -32,53 +51,53 @@ export default function PortfolioShowcaseItems() {
   const handlePortfolioItemClick = (event) => {
     let { className, classList } = event.target;
     if (
-      className.includes('clicked') ||
-      className.includes('details') ||
-      className.includes('go')
+      className.includes(styles['clicked']) ||
+      className.includes(styles['portfolio__showcase-item-details']) ||
+      className.includes(styles['portfolio__showcase-item-go'])
     ) {
-      if (className.includes('details')) {
+      if (className.includes(styles['portfolio__showcase-item-details'])) {
         const firstParent = event.target.parentElement;
-        if (firstParent.className.includes('details')) {
-          firstParent.parentElement.classList.remove('clicked');
+        if (firstParent.className.includes(styles['portfolio__showcase-item-details'])) {
+          firstParent.parentElement.classList.remove(styles['clicked']);
           className = firstParent.parentElement.className;
           classList = firstParent.parentElement.classList;
         } else {
-          firstParent.classList.remove('clicked');
+          firstParent.classList.remove(styles['clicked']);
           className = firstParent.className;
           classList = firstParent.classList;
         }
       } else {
-        classList.remove('clicked');
+        classList.remove(styles['clicked']);
       }
-      if (className.includes('go')) {
+      if (className.includes(styles['portfolio__showcase-item-go'])) {
         const firstParent = event.target.parentElement;
-        if (firstParent.className.includes('go')) {
-          firstParent.parentElement.classList.remove('clicked');
+        if (firstParent.className.includes(styles['portfolio__showcase-item-go'])) {
+          firstParent.parentElement.classList.remove(styles['clicked']);
           className = firstParent.parentElement.className;
           classList = firstParent.parentElement.classList;
         } else {
-          firstParent.classList.remove('clicked');
+          firstParent.classList.remove(styles['clicked']);
           className = firstParent.className;
           classList = firstParent.classList;
         }
-        switch (className.match(/item_[0-9a-zA-Z-]+/)[0]) {
-          case 'item_study': {
+        switch (className.split(' ')[1]) {
+          case styles['portfolio__showcase-item_study']: {
             window.open('https://yaniv10501.github.io/web_project_1/', '_blank');
             break;
           }
-          case 'item_across': {
+          case styles['portfolio__showcase-item_across']: {
             window.open('https://yaniv10501.github.io/web_project_3/', '_blank');
             break;
           }
-          case 'item_around': {
+          case styles['portfolio__showcase-item_around']: {
             window.open('https://around.yanivportfolio.com', '_blank');
             break;
           }
-          case 'item_news-explorer': {
+          case styles['portfolio__showcase-item_news-explorer']: {
             window.open('https://news-explorer.yanivportfolio.com', '_blank');
             break;
           }
-          case 'item_90degreegames': {
+          case styles['portfolio__showcase-item_90degreegames']: {
             window.open('https://90degreegames.com', '_blank');
             break;
           }
@@ -88,14 +107,17 @@ export default function PortfolioShowcaseItems() {
       }
       return false;
     }
-    classList.add('clicked');
+    classList.add(styles['clicked']);
     return true;
   };
   const checkItem = useCallback(
-    (event) => /^portfolio__showcase-item /.test(event.target.className),
+    (event) => event.target.className === styles['portfolio__showcase-item'],
     []
   );
-  const checkClicked = useCallback((event) => event.target.className.includes('clicked'), []);
+  const checkClicked = useCallback(
+    (event) => event.target.className.includes(styles['clicked']),
+    []
+  );
   const handlePortfolioItemTouchStart = (event) =>
     checkItem(event) &&
     !checkClicked(event) &&
@@ -109,7 +131,7 @@ export default function PortfolioShowcaseItems() {
   const handlePortfolioItemTouchEnd = (event) =>
     checkItem(event) && !checkClicked(event) && handleTouchEnd(event);
   useEffect(() => {
-    document.querySelectorAll('.portfolio__showcase-item').forEach((element) => {
+    document.querySelectorAll(`.${styles['portfolio__showcase-item']}`).forEach((element) => {
       element.id = element.style.left;
       element.onmousemove = (event) =>
         checkItem(event) && !checkClicked(event) && handlePortfolioItemMouseMove(event, element);
@@ -117,12 +139,14 @@ export default function PortfolioShowcaseItems() {
     });
   }, []);
   return (
-    <div className="portfolio__showcase">
+    <div className={styles['portfolio__showcase']}>
       {items.length > 0 &&
-        items.map((item) => (
+        items.map(({ name, src, srcPng }) => (
           <PortfolioShowcaseItem
-            key={item}
-            name={item}
+            key={name}
+            name={name}
+            src={src}
+            srcPng={srcPng}
             handlePortfolioItemClick={handlePortfolioItemClick}
             handlePortfolioItemTouchStart={handlePortfolioItemTouchStart}
             handlePortfolioItemTouchMove={handlePortfolioItemTouchMove}

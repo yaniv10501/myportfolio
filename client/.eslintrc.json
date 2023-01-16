@@ -17,6 +17,9 @@
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/state-in-constructor": "off",
+    "import/no-extraneous-dependencies": "off",
+    "dot-notation": "off",
+    "prefer-template": "off",
     "react/function-component-definition": [
       2,
       {
@@ -26,7 +29,7 @@
     "no-underscore-dangle": [
       "error",
       {
-        "allow": ["_id"]
+        "allow": ["_id", "_getCss", "_insertCss"]
       }
     ]
   }

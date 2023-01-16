@@ -1,7 +1,10 @@
 import React from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/portfolio/portfolio.module.css';
 import PortfolioArrow from './PortfolioArrow';
 
 export default function PortfolioArrows() {
+  useStyles(styles);
   const handleArrowClick = (event) => {
     const arrowElement = event.target;
     const animation = arrowElement.animate(
@@ -42,7 +45,7 @@ export default function PortfolioArrows() {
     animation.play();
   };
   return (
-    <div className="portfolio__arrows">
+    <div className={styles['portfolio__arrows']}>
       <PortfolioArrow direction="backwards" handleArrowClick={handleArrowClick} />
       <PortfolioArrow direction="forwards" handleArrowClick={handleArrowClick} />
     </div>

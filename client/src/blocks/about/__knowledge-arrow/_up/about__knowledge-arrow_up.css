@@ -1,7 +1,0 @@
-.about__knowledge-arrow_up {
-  transform: rotateZ(-135deg);
-}
-
-.about__knowledge-arrow_up:hover {
-  transform: rotateZ(-135deg) scale(1.2);
-}

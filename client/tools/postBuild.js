@@ -1,14 +1,27 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const path = require('path');
 const { green, cyan, red } = require('chalk');
 const open = require('open');
 require('ignore-styles');
 
 require('@babel/register')({
-  configFile: path.resolve(__dirname, '../babel.config.js'),
+  presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+  plugins: [
+    [
+      'transform-assets',
+      {
+        extensions: ['webm', 'png', 'jpg', 'jpeg', 'webp', 'svg', 'gif'],
+        name: 'static/media/[name].[hash].[ext]',
+      },
+    ],
+    [
+      'css-modules-transform',
+      {
+        generateScopedName: '[hash:base64:5]',
+        extensions: ['.css'],
+      },
+    ],
+  ],
 });
-
-let validPaths;
 
 const { buildCrawl } = require('./puppeteer');
 const { initServer, addBuildRoutes } = require('./server');
@@ -16,15 +29,19 @@ const { step, shell } = require('./common');
 
 const initialBuild = step('Initial Build', () => shell(`npm run build`));
 
-const initServerStep = step('Init Server', initServer);
-
-const crawlStep = step('Crawling', () =>
-  buildCrawl('http://localhost:3500?loading=forever').then((res) => {
-    validPaths = res;
-  })
+const ssrBuild = step('SSR Build', () =>
+  shell(`webpack --config ./webpack.server.config.js && node ./build/server/bundle.js`)
 );
 
-const addBuildRoutesStep = step('Build Routes', () => addBuildRoutes(validPaths));
+// const initServerStep = step('Init Server', initServer);
+//
+// const crawlStep = step('Crawling', () =>
+//   buildCrawl('http://localhost:3500?loading=forever').then((res) => {
+//     validPaths = res;
+//   })
+// );
+
+const addBuildRoutesStep = step('Build Routes', () => addBuildRoutes());
 
 const finalStep = () => {
   const buildWebsite = 'http://localhost:3500';
@@ -36,8 +53,7 @@ const finalStep = () => {
 
 Promise.resolve(true)
   .then(initialBuild)
-  .then(initServerStep)
-  .then(crawlStep)
+  .then(ssrBuild)
   .then(addBuildRoutesStep)
   .then(finalStep)
   .catch((err) => {

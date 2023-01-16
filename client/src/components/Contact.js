@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../blocks/contact/contact.module.css';
 import useFormValidation from '../utils/useFormValidation';
 
 function Contact() {
+  useStyles(styles);
   const [isLoading, setIsLoading] = useState(false);
   const [formResponse, setFormResponse] = useState({
     ok: false,
@@ -42,70 +45,74 @@ function Contact() {
       .finally(() => setIsLoading(false));
   };
   return (
-    <section className="contact" id="contact">
+    <section className={styles['contact']} id="contact">
       <div className={isLoading ? 'spinner' : 'spinner spinner_hidden'}>
         <i />
       </div>
       <form
         noValidate
-        className={isLoading ? 'contact__form contact__form_hidden' : 'contact__form'}
+        className={
+          isLoading
+            ? `${styles['contact__form']} ${styles['contact__form_hidden']}`
+            : styles['contact__form']
+        }
         onSubmit={handleContactSubmit}
       >
-        <h2 className="contact__title">Contact Me</h2>
-        <div className="contact__input-container">
+        <h2 className={styles['contact__title']}>Contact Me</h2>
+        <div className={styles['contact__input-container']}>
           <input
             required
-            className="contact__input"
+            className={styles['contact__input']}
             name="name"
             placeholder="Name *"
             value={name}
             onChange={handleChange}
           />
-          <span className="contact__input-error">{nameError}</span>
+          <span className={styles['contact__input-error']}>{nameError}</span>
         </div>
-        <div className="contact__input-container">
+        <div className={styles['contact__input-container']}>
           <input
             required
-            className="contact__input"
+            className={styles['contact__input']}
             name="email"
             placeholder="Email *"
             value={email}
             onChange={handleChange}
           />
-          <span className="contact__input-error">{emailError}</span>
+          <span className={styles['contact__input-error']}>{emailError}</span>
         </div>
-        <div className="contact__input-container">
+        <div className={styles['contact__input-container']}>
           <input
-            className="contact__input"
+            className={styles['contact__input']}
             name="phoneNumber"
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={handleChange}
           />
-          <span className="contact__input-error">{phoneNumberError}</span>
+          <span className={styles['contact__input-error']}>{phoneNumberError}</span>
         </div>
         <textarea
           required
-          className="contact__text-area"
+          className={styles['contact__text-area']}
           name="message"
           placeholder="Your Message *"
           rows="10"
           value={message}
           onChange={handleChange}
         />
-        <span className="contact__input-error">{messageError}</span>
+        <span className={styles['contact__input-error']}>{messageError}</span>
         <button
           className={
             isValid
-              ? 'contact__submit-button contact__submit-button_active'
-              : 'contact__submit-button'
+              ? `${styles['contact__submit-button']} ${styles['contact__submit-button_active']}`
+              : styles['contact__submit-button']
           }
           type="submit"
         >
           Send
         </button>
         <span
-          className="contact__response"
+          className={styles['contact__response']}
           style={formResponse.ok ? { color: 'var(--successColor)' } : { color: 'var(--failColor)' }}
         >
           {formResponse.message}

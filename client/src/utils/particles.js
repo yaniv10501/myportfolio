@@ -1,7 +1,9 @@
+import styles from '../blocks/home/home.module.css';
+
 const createParticle = (size, options) => {
   const { color = '50%' } = options;
   const particle = document.createElement('particle');
-  document.querySelector('.particles__container').appendChild(particle);
+  document.querySelector(`.${styles['particles__container']}`).appendChild(particle);
   particle.style.width = `${size}px`;
   particle.style.height = `${size}px`;
   particle.style.background = `hsl(${Math.random() * 5 + 180}, ${color}, ${

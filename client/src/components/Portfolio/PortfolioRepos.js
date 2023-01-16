@@ -1,4 +1,6 @@
 import React from 'react';
+import useStyles from 'isomorphic-style-loader/useStyles';
+import styles from '../../blocks/portfolio/portfolio.module.css';
 import PortfolioRepo from './PortfolioRepo';
 
 const repos = [
@@ -29,21 +31,24 @@ const repos = [
 ];
 
 export default function PortfolioRepos() {
+  useStyles(styles);
   const handleRepoItemClick = (event) => {
     const repoElement = event.target;
-    if (repoElement.className.includes('portfolio__github-repo-link')) return;
-    if (repoElement.className.includes('portfolio__github-repo-title')) {
-      const repoLink = repoElement.parentNode.querySelector('.portfolio__github-repo-link').href;
+    if (repoElement.className.includes(styles['portfolio__github-repo-link'])) return;
+    if (repoElement.className.includes(styles['portfolio__github-repo-title'])) {
+      const repoLink = repoElement.parentNode.querySelector(
+        `.${styles['portfolio__github-repo-link']}`
+      ).href;
       window.open(repoLink, '_blank');
       return;
     }
-    const repoLink = repoElement.querySelector('.portfolio__github-repo-link').href;
+    const repoLink = repoElement.querySelector(`.${styles['portfolio__github-repo-link']}`).href;
     window.open(repoLink, '_blank');
   };
   return (
-    <div className="portfolio__github-repos">
-      <h3 className="portfolio__github-repos-title">GitHub Repositories</h3>
-      <div className="portfolio__github-repos-grid">
+    <div className={styles['portfolio__github-repos']}>
+      <h3 className={styles['portfolio__github-repos-title']}>GitHub Repositories</h3>
+      <div className={styles['portfolio__github-repos-grid']}>
         {repos.map(({ repoTitle, repoLink }) => (
           <PortfolioRepo
             key={repoLink}

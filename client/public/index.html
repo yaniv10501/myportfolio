@@ -4,12 +4,30 @@
     <meta charset="utf-8" />
     <link
       rel="preload"
-      href="../src/fonts/Noto_Serif/NotoSerif-Bold.ttf"
+      href="/fonts/Noto_Serif/NotoSerif-Bold.ttf"
       as="font"
       type="font/truetype"
       crossorigin
     />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+    href="/fonts/fonts.css"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+    href="/index.css"
+    rel="preload"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      href="/normalize.css"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
     <meta name="Yaniv's Portfolio" content="Yaniv's Portfolio Website" />
@@ -17,7 +35,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="canonical" href="https://yanivportfolio.com" />
     <title>Yaniv's Portfolio</title>
     <meta name="description" content="Full-Stack Developer Portfolio Website." />
     <meta property="og:locale" content="en_US" />
