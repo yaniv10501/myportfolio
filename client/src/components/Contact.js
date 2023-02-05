@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useStyles from 'isomorphic-style-loader/useStyles';
 import styles from '../blocks/contact/contact.module.css';
 import useFormValidation from '../utils/useFormValidation';
+import Spinner from './Spinner';
 
 function Contact() {
   useStyles(styles);
@@ -46,9 +47,7 @@ function Contact() {
   };
   return (
     <section className={styles['contact']} id="contact">
-      <div className={isLoading ? 'spinner' : 'spinner spinner_hidden'}>
-        <i />
-      </div>
+      <Spinner isLoading={isLoading} />
       <form
         noValidate
         className={
