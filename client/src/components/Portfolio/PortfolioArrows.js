@@ -21,7 +21,7 @@ export default function PortfolioArrows() {
       ],
       { duration: 400, easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)' }
     );
-    const portfolioElement = document.querySelector('.portfolio__showcase');
+    const portfolioElement = document.querySelector(`.${styles['portfolio__showcase']}`);
     const { scrollLeft } = portfolioElement;
     const portfolioScroll = portfolioElement.scrollWidth;
     switch (arrowElement.id) {

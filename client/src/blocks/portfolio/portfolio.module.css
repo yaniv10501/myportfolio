@@ -9,7 +9,7 @@
 }
 
 .portfolio__arrow {
-  background-color: var(--secondaryColor);
+  background-color: var(--black);
 }
 
 @media screen and (max-device-width: 890px) and (orientation: portrait) {

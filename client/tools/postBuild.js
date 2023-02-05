@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { green, cyan, red } = require('chalk');
 const open = require('open');
+const fs = require('fs');
+const path = require('path');
 require('ignore-styles');
 
 require('@babel/register')({
@@ -27,6 +29,10 @@ const { buildCrawl } = require('./puppeteer');
 const { initServer, addBuildRoutes } = require('./server');
 const { step, shell } = require('./common');
 
+const removeServerBundle = () => {
+  fs.rmSync(path.join(__dirname, '../build/server'), { recursive: true, force: true });
+};
+
 const initialBuild = step('Initial Build', () => shell(`npm run build`));
 
 const ssrBuild = step('SSR Build', () =>
@@ -43,6 +49,8 @@ const ssrBuild = step('SSR Build', () =>
 
 const addBuildRoutesStep = step('Build Routes', () => addBuildRoutes());
 
+const removeServerBundleStep = step('Remove Server Bundle', () => removeServerBundle());
+
 const finalStep = () => {
   const buildWebsite = 'http://localhost:3500';
   console.log(green('Your Build Server Is Ready!'));
@@ -55,6 +63,7 @@ Promise.resolve(true)
   .then(initialBuild)
   .then(ssrBuild)
   .then(addBuildRoutesStep)
+  .then(removeServerBundleStep)
   .then(finalStep)
   .catch((err) => {
     if (err) console.error(red(err.stack || err.toString()));
