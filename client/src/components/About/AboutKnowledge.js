@@ -9,8 +9,9 @@ export default function AboutKnowledge() {
   useStyles(styles);
   return (
     <div className={styles['about__knowledge']}>
-      <AboutKnowledgeWidget />
+      <h3 className={styles['about__knowledge-title']}>My Knowledge</h3>
       <AboutKnowledgeItems />
+      <AboutKnowledgeWidget />
     </div>
   );
 }

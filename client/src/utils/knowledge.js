@@ -1,6 +1,5 @@
 import styles from '../blocks/about/about.module.css';
 import classNames from '../assets/classNames';
-import { setColor } from './setColors';
 
 const knowledgeList = [
   'HTML',
@@ -45,8 +44,6 @@ const moveKnowledgeUp = () => {
   belowItem.classList.replace(styles[itemBelowClass], styles[itemDownClass]);
   bottomItem.classList.replace(styles[itemBottomClass], styles[itemBelowClass]);
   topItem.classList.replace(styles[itemTopClass], styles[itemBottomClass]);
-  downItem.style.background = 'var(--secondaryColor)';
-  setColor('var(--backgroundColor)', currentItem, belowItem);
 };
 const moveKnowledgeDown = () => {
   const {
@@ -78,8 +75,6 @@ const moveKnowledgeDown = () => {
   downItem.classList.replace(styles[itemDownClass], styles[itemBelowClass]);
   belowItem.classList.replace(styles[itemBelowClass], styles[itemBottomClass]);
   bottomItem.classList.replace(styles[itemBottomClass], styles[itemTopClass]);
-  upItem.style.background = 'var(--secondaryColor)';
-  setColor('var(--backgroundColor)', aboveItem, currentItem);
 };
 
 export { moveKnowledgeDown, moveKnowledgeUp };
