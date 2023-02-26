@@ -80,24 +80,24 @@ export default function PortfolioShowcaseItems() {
           className = firstParent.className;
           classList = firstParent.classList;
         }
-        switch (className.split(' ')[1]) {
-          case styles['portfolio__showcase-item_study']: {
+        switch (event.target.getAttribute('name')) {
+          case 'study': {
             window.open('https://yaniv10501.github.io/web_project_1/', '_blank');
             break;
           }
-          case styles['portfolio__showcase-item_across']: {
+          case 'across': {
             window.open('https://yaniv10501.github.io/web_project_3/', '_blank');
             break;
           }
-          case styles['portfolio__showcase-item_around']: {
+          case 'around': {
             window.open('https://around.yanivportfolio.com', '_blank');
             break;
           }
-          case styles['portfolio__showcase-item_news-explorer']: {
+          case 'news-explorer': {
             window.open('https://news-explorer.yanivportfolio.com', '_blank');
             break;
           }
-          case styles['portfolio__showcase-item_90degreegames']: {
+          case '90degreegames': {
             window.open('https://90degreegames.com', '_blank');
             break;
           }

@@ -69,6 +69,7 @@ export default function PortfolioShowcaseItem(props) {
           <div
             className={styles['portfolio__showcase-item-go']}
             role="button"
+            name={name}
             tabIndex={0}
             aria-label={`${name} website`}
           >

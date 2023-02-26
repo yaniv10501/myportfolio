@@ -25,7 +25,6 @@ require('@babel/register')({
   ],
 });
 
-const { buildCrawl } = require('./puppeteer');
 const { initServer, addBuildRoutes } = require('./server');
 const { step, shell } = require('./common');
 
