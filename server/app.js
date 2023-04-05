@@ -25,7 +25,14 @@ app.use(
       useDefaults: true,
       directives: {
         defaultSrc: [`'self'`, 'https://yanivapi.com'],
-        scriptSrc: [`'self'`, 'https://www.googletagmanager.com/gtag/js?id=G-P9K37T374P'],
+        scriptSrc: [`'self'`, 'https://*.googletagmanager.com'],
+        imgSrc: [`'self`, 'https://*.google-analytics.com', 'https://*.googletagmanager.com'],
+        connectSrc: [
+          `'self`,
+          'https://*.google-analytics.com',
+          'https://*.analytics.google.com',
+          'https://*.googletagmanager.com',
+        ],
       },
     },
     referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
