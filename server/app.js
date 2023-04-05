@@ -24,7 +24,7 @@ app.use(
     contentSecurityPolicy: {
       useDefaults: true,
       directives: {
-        defaultSrc: [`'self'`, 'https://yanivapi.com', 'https://www.googletagmanager.com'],
+        defaultSrc: [`'self'`, 'https://yanivapi.com'],
       },
     },
     referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
