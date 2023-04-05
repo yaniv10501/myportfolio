@@ -27,6 +27,7 @@ app.use(
         defaultSrc: [`'self'`, 'https://yanivapi.com'],
         scriptSrc: [`'self'`, 'https://*.googletagmanager.com', 'unsafe-inline'],
         imgSrc: [
+          'https://yanivportfolio.com',
           `'self`,
           'data:',
           'https://*.google-analytics.com',
