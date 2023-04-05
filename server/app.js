@@ -26,7 +26,12 @@ app.use(
       directives: {
         defaultSrc: [`'self'`, 'https://yanivapi.com'],
         scriptSrc: [`'self'`, 'https://*.googletagmanager.com', 'unsafe-inline'],
-        imgSrc: [`'self`, 'https://*.google-analytics.com', 'https://*.googletagmanager.com'],
+        imgSrc: [
+          `'self`,
+          'data:',
+          'https://*.google-analytics.com',
+          'https://*.googletagmanager.com',
+        ],
         connectSrc: [
           `'self`,
           'https://*.google-analytics.com',
