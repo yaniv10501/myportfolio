@@ -25,6 +25,7 @@ app.use(
       useDefaults: true,
       directives: {
         defaultSrc: [`'self'`, 'https://yanivapi.com'],
+        scriptSrc: [`'self'`, 'https://www.googletagmanager.com/gtag/js?id=G-P9K37T374P'],
       },
     },
     referrerPolicy: { policy: 'strict-origin-when-cross-origin' },

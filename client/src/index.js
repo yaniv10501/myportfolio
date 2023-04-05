@@ -1,10 +1,7 @@
 import React, { useCallback, useMemo } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
-import ReactGa4 from 'react-ga4';
 import StyleContext from 'isomorphic-style-loader/StyleContext';
 import App from './components/App';
-
-ReactGa4.initialize('G-P9K37T374P');
 
 let root;
 const domNode = document.getElementById('root');
