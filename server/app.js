@@ -25,13 +25,13 @@ app.use(
       useDefaults: true,
       directives: {
         defaultSrc: [`'self'`, 'https://yanivapi.com'],
-        scriptSrc: [`'self'`, 'https://*.googletagmanager.com'],
-        imgSrc: [`'self`, 'https://*.google-analytics.com', 'https://*.googletagmanager.com'],
+        scriptSrc: [`'self'`, 'https://www.googletagmanager.com'],
+        imgSrc: [`'self`, 'https://www.google-analytics.com', 'https://www.googletagmanager.com'],
         connectSrc: [
           `'self`,
-          'https://*.google-analytics.com',
-          'https://*.analytics.google.com',
-          'https://*.googletagmanager.com',
+          'https://www.google-analytics.com',
+          'https://www.analytics.google.com',
+          'https://www.googletagmanager.com',
         ],
       },
     },
