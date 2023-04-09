@@ -439,6 +439,8 @@
 }
 
 .portfolio__showcase-item-image_90degreegames {
+  box-sizing: border-box;
+  padding: 15px;
   background-color: var(--black);
   object-position: center;
   object-fit: contain;
