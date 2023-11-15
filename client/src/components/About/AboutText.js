@@ -21,6 +21,9 @@ export default function AboutText() {
         }
         titleWrapperRef.current.style.transform = `scale(${value},${value})`;
         value = 600 - ((value - 0.45) / 0.55) * 500 + 50;
+        if (window.innerWidth < 625 && value > 290) {
+          value = 290;
+        }
         titleWrapperRef.current.style.top = `${value}px`;
         titleWrapperRef.current.children[0].style.top = `${value}px`;
       }
@@ -60,7 +63,7 @@ export default function AboutText() {
           }, 500);
         }
       },
-      { threshold: 1 }
+      { threshold: 0.3 }
     );
     textObserver.observe(textWrapperRef.current);
   }, []);

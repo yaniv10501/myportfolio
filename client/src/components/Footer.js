@@ -9,6 +9,7 @@ import gitHubIconLight from '../images/GitHub-Mark-Light-32px.webp';
 import linkedinIconPng from '../images/linkedin.png';
 import linkedinIcon from '../images/linkedin.webp';
 import FlexImg from './FlexImg';
+import { currentYear } from '../assets/date';
 
 function Footer() {
   useStyles(styles);
@@ -85,7 +86,7 @@ function Footer() {
         <div
           className={`${styles['footer__column']} ${styles['footer__column_content_copyright']}`}
         >
-          <p className={styles['footer__author']}>&copy; 2021 Yaniv Schweitzer</p>
+          <p className={styles['footer__author']}>&copy; {currentYear} Yaniv Schweitzer</p>
         </div>
       </div>
     </footer>
