@@ -157,6 +157,12 @@
   }
 }
 
+.about__knowledge-words {
+  width: 100%;
+  height: 100vh;
+  max-height: webkit-fill-available;
+}
+
 .about__knowledge-arrow {
   border: solid var(--secondaryColor);
   border-width: 0 8px 8px 0;

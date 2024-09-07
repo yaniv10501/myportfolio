@@ -55,7 +55,7 @@ export default function HeaderNav() {
       setTimeout(() => {
         const target = document.querySelector(menuTo.match(/#[\w]*/)[0]);
         const rect = target.getBoundingClientRect();
-        window.scrollTo({ top: rect.top + window.scrollY - 80, behavior: 'smooth' });
+        window.scrollTo({ top: rect.top + window.scrollY - 40, behavior: 'smooth' });
         setMenuTo('');
       }, 150);
     }

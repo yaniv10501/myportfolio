@@ -14,14 +14,26 @@ import studyLogo from '../../images/how-to-study-eng-cover.webp';
 import studyLogoPng from '../../images/how-to-study-eng-cover.png';
 import acrossLogo from '../../images/across-usa-cover.webp';
 import acrossLogoPng from '../../images/across-usa-cover.png';
+import idleduoLogo from '../../images/idleduo-logo.webp';
+import idleduoLogoPng from '../../images/idleduo-logo.jpg';
 
 const items = [
+  { name: 'idleduo', src: idleduoLogo, srcPng: idleduoLogoPng },
   { name: '90degreegames', src: degreegamesLogo, srcPng: degreegamesLogoPng },
   { name: 'news-explorer', src: newsExplorerLogo, srcPng: newsExplorerLogoPng },
   { name: 'around', src: aroundLogo, srcPng: aroundLogoPng },
   { name: 'study', src: studyLogo, srcPng: studyLogoPng },
   { name: 'across', src: acrossLogo, srcPng: acrossLogoPng },
 ];
+
+const links = {
+  idleduo: 'http://idleduo.com',
+  '90degreegames': 'https://90degreegames.com',
+  'news-explorer': 'https://news-explorer.yanivportfolio.com',
+  around: 'https://around.yanivportfolio.com',
+  study: 'https://yaniv10501.github.io/web_project_1/',
+  across: 'https://yaniv10501.github.io/web_project_3/',
+};
 
 export default function PortfolioShowcaseItems() {
   useStyles(styles);
@@ -80,30 +92,7 @@ export default function PortfolioShowcaseItems() {
           className = firstParent.className;
           classList = firstParent.classList;
         }
-        switch (event.target.getAttribute('name')) {
-          case 'study': {
-            window.open('https://yaniv10501.github.io/web_project_1/', '_blank');
-            break;
-          }
-          case 'across': {
-            window.open('https://yaniv10501.github.io/web_project_3/', '_blank');
-            break;
-          }
-          case 'around': {
-            window.open('https://around.yanivportfolio.com', '_blank');
-            break;
-          }
-          case 'news-explorer': {
-            window.open('https://news-explorer.yanivportfolio.com', '_blank');
-            break;
-          }
-          case '90degreegames': {
-            window.open('https://90degreegames.com', '_blank');
-            break;
-          }
-          default:
-            break;
-        }
+        window.open(links[event.target.getAttribute('name')], '_blank');
       }
       return false;
     }

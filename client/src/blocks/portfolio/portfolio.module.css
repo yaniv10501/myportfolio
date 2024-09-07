@@ -208,9 +208,7 @@
 }
 
 .portfolio__showcase {
-  box-shadow: 0 0 5px 1px var(--backgroundColor);
-  perspective: 1000px;
-  perspective-origin: 30% 20%;
+  /* box-shadow: 0 0 5px 1px var(--backgroundColor); */
   width: 70%;
   max-width: 1400px;
   height: 750px;
@@ -221,6 +219,7 @@
   justify-content: center;
   overflow-x: auto;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 @media screen and (max-width: 1400px) {
@@ -262,12 +261,24 @@
   }
 }
 
-.portfolio__showcase-item {
-  position: relative;
+.portfolio__showcase-item-container {
+  scroll-snap-align: start;
+  perspective: 1000px;
+  perspective-origin: 30% 20%;
   height: 650px;
   width: 650px;
+}
+
+.portfolio__showcase-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
   transform: rotateY(20deg) translate3d(0, 0, -200px);
   transition: transform 0.5s cubic-bezier(0.08, 0.2, 0.2, 1);
+}
+
+.portfolio__showcase-item-back {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .portfolio__showcase-item:first-child {
@@ -284,6 +295,7 @@
 }
 
 .portfolio__showcase-item.clicked::before {
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -294,6 +306,8 @@
 }
 
 .portfolio__showcase-item-details {
+  position: relative;
+  z-index: 3;
   padding: 10px;
   transform: rotateY(180deg);
   display: flex;
@@ -315,6 +329,8 @@
 }
 
 .portfolio__showcase-item-go {
+  position: relative;
+  z-index: 3;
   transform: rotateY(180deg);
   box-shadow: 0 0 2px 3px var(--white);
   max-width: 50%;
@@ -339,21 +355,21 @@
 }
 
 @media screen and (max-width: 1400px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 550px;
     width: 550px;
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 500px;
     width: 500px;
   }
 }
 
 @media screen and (max-width: 890px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 400px;
     width: 400px;
   }
@@ -364,13 +380,17 @@
 }
 
 @media screen and (max-width: 768px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 300px;
     width: 300px;
   }
 
   .portfolio__showcase-item-details {
     padding: 8px 0;
+  }
+
+  .portfolio__showcase-item-details:first-of-type {
+    padding: 24px 0 8px;
   }
 
   .portfolio__showcase-item-details-text {
@@ -383,13 +403,17 @@
 }
 
 @media screen and (max-width: 560px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 200px;
     width: 200px;
   }
 
   .portfolio__showcase-item-details {
     padding: 5px 0;
+  }
+
+  .portfolio__showcase-item-details:first-of-type {
+    padding: 15px 0 5px;
   }
 
   .portfolio__showcase-item-details-text {
@@ -402,13 +426,17 @@
 }
 
 @media screen and (max-width: 370px) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 180px;
     width: 180px;
   }
 
   .portfolio__showcase-item-details {
     padding: 2px 0;
+  }
+
+  .portfolio__showcase-item-details:first-of-type {
+    padding: 6px 0 2px;
   }
 
   .portfolio__showcase-item-details-text {
@@ -421,7 +449,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 890px) and (orientation: landscape) {
-  .portfolio__showcase-item {
+  .portfolio__showcase-item-container {
     height: 400px;
     width: 400px;
   }

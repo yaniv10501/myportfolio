@@ -35,48 +35,50 @@ export default function PortfolioShowcaseItem(props) {
     }
   }, [activeItem]);
   return (
-    <div
-      ref={itemRef}
-      className={`${styles['portfolio__showcase-item']}`}
-      onClick={onClick}
-      onTouchStart={handlePortfolioItemTouchStart}
-      onTouchMove={handlePortfolioItemTouchMove}
-      onTouchEnd={handlePortfolioItemTouchEnd}
-      onKeyDown={() => {}}
-      role="button"
-      tabIndex={0}
-      aria-label={`${name} item details`}
-    >
-      <FlexImg
-        className={
-          styles['portfolio__showcase-item-image'] +
-          ' ' +
-          styles[`portfolio__showcase-item-image_${name}`]
-        }
-        src={src}
-        srcPng={srcPng}
-        alt={name}
-        width={450}
-        height={650}
-      />
-      {isClicked && (
-        <>
-          <PortfolioShowcaseItemDetails details="Frontend - React" />
-          <PortfolioShowcaseItemDetails details="Backend - NodeJS" />
-          <PortfolioShowcaseItemDetails details="Server - Nginx" />
-          <PortfolioShowcaseItemDetails details="DB - Mongo" />
-          <PortfolioShowcaseItemDetails details="CI/CD - Node Worker" />
-          <div
-            className={styles['portfolio__showcase-item-go']}
-            role="button"
-            name={name}
-            tabIndex={0}
-            aria-label={`${name} website`}
-          >
-            <h3 className={styles['portfolio__showcase-item-go-text']}>Go to Website</h3>
-          </div>
-        </>
-      )}
+    <div className={`${styles['portfolio__showcase-item-container']}`}>
+      <div
+        ref={itemRef}
+        className={`${styles['portfolio__showcase-item']}`}
+        onClick={onClick}
+        onTouchStart={handlePortfolioItemTouchStart}
+        onTouchMove={handlePortfolioItemTouchMove}
+        onTouchEnd={handlePortfolioItemTouchEnd}
+        onKeyDown={() => {}}
+        role="button"
+        tabIndex={0}
+        aria-label={`${name} item details`}
+      >
+        <FlexImg
+          className={
+            styles['portfolio__showcase-item-image'] +
+            ' ' +
+            (styles[`portfolio__showcase-item-image_${name}`] || '')
+          }
+          src={src}
+          srcPng={srcPng}
+          alt={name}
+          width={450}
+          height={650}
+        />
+        {isClicked && (
+          <>
+            <PortfolioShowcaseItemDetails details="Frontend - React" />
+            <PortfolioShowcaseItemDetails details="Backend - NodeJS" />
+            <PortfolioShowcaseItemDetails details="Server - Nginx" />
+            <PortfolioShowcaseItemDetails details="DB - Mongo" />
+            <PortfolioShowcaseItemDetails details="CI/CD - Node Worker" />
+            <div
+              className={styles['portfolio__showcase-item-go']}
+              role="button"
+              name={name}
+              tabIndex={0}
+              aria-label={`${name} website`}
+            >
+              <h3 className={styles['portfolio__showcase-item-go-text']}>Go to Website</h3>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

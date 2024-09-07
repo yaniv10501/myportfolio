@@ -18,7 +18,7 @@ function Footer() {
     <footer className={styles['footer']}>
       <div className={styles['footer__columns']}>
         <nav className={`${styles['footer__column']} ${styles['footer__column_content_about']}`}>
-          <h3 className={styles['footer__column-heading']}>About Me</h3>
+          <h3 className={styles['footer__column-headcing']}>About Me</h3>
 
           <ul className={styles['footer__list']}>
             <li className={styles['footer__column-cell']}>
@@ -30,7 +30,7 @@ function Footer() {
             </li>
 
             <li className={styles['footer__column-cell']}>
-              <p className={styles['footer__column-link']}>yaniv.sch.fullstack@gmail.com</p>
+              <p className={styles['footer__column-link']}>yaniv.sch@icloud.com</p>
             </li>
           </ul>
         </nav>

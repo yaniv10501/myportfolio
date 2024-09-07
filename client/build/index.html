@@ -4,7 +4,7 @@
       }
       gtag('js', new Date());
 
-      gtag('config', 'G-P9K37T374P');</script><script defer="defer" src="/static/js/vendor.ae685cb6830c0284a061.js"></script><script defer="defer" src="/static/js/main.7cc145d409cc4a5eefbe.js"></script><style>.b3VOSAYSFlDWnp5MfB7p {
+      gtag('config', 'G-P9K37T374P');</script><script defer="defer" src="/static/js/vendor.ae685cb6830c0284a061.js"></script><script defer="defer" src="/static/js/main.8ca393d500f1fa9a366f.js"></script><style>.b3VOSAYSFlDWnp5MfB7p {
   font-family: 'NotoSerif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -85,6 +85,8 @@
 .Tor6Uk4XP3Ub1ikMxGpg {
   box-sizing: border-box;
   height: calc(var(--vh, 1vh) * 100);
+  max-height: -webkit-fill-available;
+  max-height: stretch;
   width: 100%;
   box-shadow: 0 0 10px 5px var(--secondaryColor);
 }
@@ -93,6 +95,8 @@
   position: fixed;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
+  max-height: -webkit-fill-available;
+  max-height: stretch;
   background: radial-gradient(
       ellipse at 95% 10%,
       var(--white) 1%,
@@ -229,12 +233,33 @@
 
 particle {
   opacity: 0;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   left: 0;
   pointer-events: none;
   position: absolute;
   top: 0;
-  box-shadow: 0 0 10px 10px #fff;
+  /* box-shadow: 0 0 10px 10px #fff; */
+}
+
+particle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHZlcnNpb249IjEuMSIKICB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgPGcgaWQ9IlNub3dmbGFrZSI+CiAgICA8Zz4KICAgICAgPHBvbHlsaW5lIHBvaW50cz0iOCwxOSAxMiwxNiAxNiwxOS4wMyAgICIKICAgICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojRkZGO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIC8+CiAgICAgIDxwb2x5bGluZSBwb2ludHM9IjguNSwyMiAxMiwyMCAxNS41LDIyICAgIgogICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgPGxpbmUgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I0ZGRjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7IiB4MT0iMTIiIHgyPSIxMiIgeTE9IjAuNSIKICAgICAgICB5Mj0iMjMuNSIgLz4KICAgICAgPHBvbHlsaW5lIHBvaW50cz0iMTYsNSAxMiw4IDgsNSAgICIKICAgICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojRkZGO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIC8+CiAgICAgIDxwb2x5bGluZSBwb2ludHM9IjE1LjUsMiAxMiw0IDguNSwyICAgIgogICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgPHBvbHlsaW5lIHBvaW50cz0iMTYsMTkuMDMgMTUuNDYsMTQgMjAsMTIgICAiCiAgICAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I0ZGRjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7IiAvPgogICAgICA8cG9seWxpbmUgcG9pbnRzPSI4LDUgOC41NCwxMCA0LDEyICAgIgogICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgPHBvbHlsaW5lIHBvaW50cz0iMjAsMTIgMTUuNDYsMTAgMTYsNSAgICIKICAgICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojRkZGO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIC8+CiAgICAgIDxwb2x5bGluZSBwb2ludHM9IjQsMTIgOC41NCwxNCA4LDE5ICAgIgogICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgPGc+CiAgICAgICAgPHBvbHlsaW5lIHBvaW50cz0iMTguOTcsMjAuMDMgMTguOTksMTYgICAgICAyMi41LDEzLjk3ICAgICIKICAgICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgICA8bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojRkZGO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDsiIHgxPSIxLjk1IiB4Mj0iMjIuMDUiCiAgICAgICAgICB5MT0iNi4yNSIgeTI9IjE3Ljc1IiAvPgogICAgICAgIDxwb2x5bGluZSBwb2ludHM9IjUuMDMsMy45NyA1LjAxLDggMS41LDEwLjAzICAgICAgICAgIgogICAgICAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I0ZGRjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7IiAvPgogICAgICAgIDxwb2x5bGluZSBwb2ludHM9IjIyLjUsMTAuMDMgMTguOTksOCAxOC45NywzLjk3ICAgICAgICAgIgogICAgICAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6I0ZGRjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7IiAvPgogICAgICAgIDxsaW5lIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgeDE9IjEuOTUiIHgyPSIyMi4wNSIKICAgICAgICAgIHkxPSIxNy43NSIgeTI9IjYuMjUiIC8+CiAgICAgICAgPHBvbHlsaW5lIHBvaW50cz0iMS41LDEzLjk3IDUuMDEsMTYgNS4wMywyMC4wMyAgICAgICAgICIKICAgICAgICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiNGRkY7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kOyIgLz4KICAgICAgPC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==);
+  background-size: 100% 100%;
+  animation: TF0apUzqgEqyN_QYtyDL 7s linear infinite forwards;
+}
+
+@keyframes TF0apUzqgEqyN_QYtyDL {
+  from {
+    transform: rotate3d(0);
+  }
+  to {
+    transform: rotate3d(0.4, 0.2, 1, 360deg);
+  }
 }
 
 .Ge23s9FM82LXclpZBKwY {
@@ -244,7 +269,12 @@ particle {
   overflow: hidden;
 }
 .ouNk_FM6vaSfMwMZNee5 {
+  position: sticky;
+  top: 0;
+  left: 0;
   display: flex;
+  background-color: var(--primaryColor);
+  z-index: 2;
 }
 
 .Ifqf1UlXAxTtKlXpc0QO {
@@ -285,10 +315,7 @@ particle {
 }
 
 .W2VPeK8jBUjBRle20QiD {
-  position: relative;
-  background-color: var(--primaryColor);
   box-sizing: border-box;
-  z-index: 2;
   width: 100%;
   padding: 10px 0;
   display: flex;
@@ -343,7 +370,7 @@ particle {
     max-height: 80px;
     display: block;
     transition: max-height 0.7s cubic-bezier(0.19, 1, 0.22, 1),
-    opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+      opacity 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
   }
   .W2VPeK8jBUjBRle20QiD.xKrIDtKqmReYKNnllUZT {
     opacity: 1;
@@ -533,6 +560,12 @@ particle {
   .dBhvgJ_y2ghgv8fVihCr {
     flex-direction: column;
   }
+}
+
+.WhuykhD55eJ1acdaDjPP {
+  width: 100%;
+  height: 100vh;
+  max-height: webkit-fill-available;
 }
 
 .a7R9xZ0YPzFeU7DLgebY {
@@ -1065,9 +1098,7 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 .KQGCoT6TnRp6R0eqfd0i {
-  box-shadow: 0 0 5px 1px var(--backgroundColor);
-  perspective: 1000px;
-  perspective-origin: 30% 20%;
+  /* box-shadow: 0 0 5px 1px var(--backgroundColor); */
   width: 70%;
   max-width: 1400px;
   height: 750px;
@@ -1078,6 +1109,7 @@ input[type='range']:focus::-ms-fill-upper {
   justify-content: center;
   overflow-x: auto;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 @media screen and (max-width: 1400px) {
@@ -1119,12 +1151,24 @@ input[type='range']:focus::-ms-fill-upper {
   }
 }
 
-.lm_fPChAvm1ldIVVDaKg {
-  position: relative;
+.Cl9bkAYeEhIjFbZKbjxw {
+  scroll-snap-align: start;
+  perspective: 1000px;
+  perspective-origin: 30% 20%;
   height: 650px;
   width: 650px;
+}
+
+.lm_fPChAvm1ldIVVDaKg {
+  position: relative;
+  width: 100%;
+  height: 100%;
   transform: rotateY(20deg) translate3d(0, 0, -200px);
   transition: transform 0.5s cubic-bezier(0.08, 0.2, 0.2, 1);
+}
+
+._9WF1kKGB0VOvKy98_pw {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .lm_fPChAvm1ldIVVDaKg:first-child {
@@ -1141,6 +1185,7 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 .lm_fPChAvm1ldIVVDaKg.BARLIBRTnjXOb1B4YBlg::before {
+  z-index: 2;
   position: absolute;
   top: 0;
   left: 0;
@@ -1151,6 +1196,8 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 .FustJYcoy928YgGxAH9J {
+  position: relative;
+  z-index: 3;
   padding: 10px;
   transform: rotateY(180deg);
   display: flex;
@@ -1172,6 +1219,8 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 .Il1pOWGqoLI2HX1FO3W7 {
+  position: relative;
+  z-index: 3;
   transform: rotateY(180deg);
   box-shadow: 0 0 2px 3px var(--white);
   max-width: 50%;
@@ -1196,21 +1245,21 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 1400px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 550px;
     width: 550px;
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 500px;
     width: 500px;
   }
 }
 
 @media screen and (max-width: 890px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 400px;
     width: 400px;
   }
@@ -1221,13 +1270,17 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 768px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 300px;
     width: 300px;
   }
 
   .FustJYcoy928YgGxAH9J {
     padding: 8px 0;
+  }
+
+  .FustJYcoy928YgGxAH9J:first-of-type {
+    padding: 24px 0 8px;
   }
 
   .SQ9UaRHXLQKGdLobi6XN {
@@ -1240,13 +1293,17 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 560px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 200px;
     width: 200px;
   }
 
   .FustJYcoy928YgGxAH9J {
     padding: 5px 0;
+  }
+
+  .FustJYcoy928YgGxAH9J:first-of-type {
+    padding: 15px 0 5px;
   }
 
   .SQ9UaRHXLQKGdLobi6XN {
@@ -1259,13 +1316,17 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 @media screen and (max-width: 370px) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 180px;
     width: 180px;
   }
 
   .FustJYcoy928YgGxAH9J {
     padding: 2px 0;
+  }
+
+  .FustJYcoy928YgGxAH9J:first-of-type {
+    padding: 6px 0 2px;
   }
 
   .SQ9UaRHXLQKGdLobi6XN {
@@ -1278,7 +1339,7 @@ input[type='range']:focus::-ms-fill-upper {
 }
 
 @media screen and (min-width: 768px) and (max-width: 890px) and (orientation: landscape) {
-  .lm_fPChAvm1ldIVVDaKg {
+  .Cl9bkAYeEhIjFbZKbjxw {
     height: 400px;
     width: 400px;
   }
@@ -1594,4 +1655,4 @@ input[type='range']:focus::-ms-fill-upper {
 .kN6eIWK1qsIPOBbNrjwW:hover {
   opacity: 0.6;
 }
-</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="b3VOSAYSFlDWnp5MfB7p WD8z_zLKdUF2J_5Kqmg2"><div class="HlpurpQHQSM9ViEFd_GE"><div class="_Jv_CMQPAxkwIc9QA8Lo"><i></i></div><p class="JFzej37NfxIzG1Vqk2dX"></p></div><div class="undefined c0jue6BaoRS2EAbfFq0A"><section class="Tor6Uk4XP3Ub1ikMxGpg" id="home"><div class="WgqsNtBfMYTWIhV8H3sy"><h1 class="CKCi3HOQB12QTdaBVhNQ">Hey, my name is Yaniv Schweitzer.<br/>Welcome to my portfolio website.</h1><img class="YbJ2SbPriAmUA6am0xuD" src="static/media/IMG_6334_edited_edited.39f89cfc8f00b5a964d0.webp" srcSet="" sizes="" height="1125" width="2000" alt="home background"/><div class="OAGlDm_15iXL0QG_PdIE" role="button" tabindex="0" aria-label="home arrow"></div><div class="Ge23s9FM82LXclpZBKwY"></div></div></section><main class="dxYgEFa1dz1bJ_3ItsCO"><header class="ouNk_FM6vaSfMwMZNee5"><nav class="W2VPeK8jBUjBRle20QiD"><button class="ZMonq23OlSFzAV5cCHD_ BYtcP5G5bJMxbcEVTUsj" type="button" aria-label="mobile menu"><div></div></button><button class="Ifqf1UlXAxTtKlXpc0QO" type="button"><img class="B2YqmaYXki9COkWir1F9" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgaWQ9IkxheWVyXzFfMV8iIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxjaXJjbGUgY3g9IjguNSIgY3k9IjcuNSIgcj0iNC41IiAvPgogIDxyZWN0IGhlaWdodD0iMiIgd2lkdGg9IjEiIHg9IjgiIC8+CiAgPHJlY3QgaGVpZ2h0PSIyIiB3aWR0aD0iMSIgeD0iOCIgeT0iMTMiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB3aWR0aD0iMiIgeD0iMTQiIHk9IjciIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB3aWR0aD0iMiIgeD0iMSIgeT0iNyIgLz4KICA8cmVjdCBoZWlnaHQ9IjIiIHRyYW5zZm9ybT0ibWF0cml4KDAuNzA3MSAtMC43MDcxIDAuNzA3MSAwLjcwNzEgLTQuNzE3NSAxMi44MDMzKSIgd2lkdGg9IjEiIHg9IjEyLjU5NiIgeT0iMTEuMDk2IiAvPgogIDxyZWN0IGhlaWdodD0iMiIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxIC0wLjcwNzEgMC43MDcxIDAuNzA3MSAtMC45MDk5IDMuNjEwOSkiIHdpZHRoPSIxIiB4PSIzLjQwNCIgeT0iMS45MDQiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEgLTAuNzA3MSAwLjcwNzEgMC43MDcxIC03LjQwOTkgNi4zMDMzKSIgd2lkdGg9IjIiIHg9IjIuOTA0IiB5PSIxMS41OTYiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEgLTAuNzA3MSAwLjcwNzEgMC43MDcxIDEuNzgyMyAxMC4xMTA3KSIgd2lkdGg9IjIiIHg9IjEyLjA5NiIgeT0iMi40MDQiIC8+Cjwvc3ZnPgo=" alt="theme" height="30" width="30"/></button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#home">Home</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#about">About</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#portfolio">Portfolio</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#contact">Contact</button></nav></header><section class="Dx2pZAm1rfJvkcKSzV2z" id="about"><div class="PwjJB7XdYJ0EtNebJygH"><div class="VU81Y_UEWrG378S2_G3q"><h2 class="wPG9vchu_KyNw9LId1uG">About me</h2></div><div class="_LBV7vtHRXXUH5bPZcgx"><p>I am a Full-Stack Web Developer from Jerusalem, Israel.</p><p>I love programming, challenging myself and researching new fields.</p><p>Currently working at<!-- --> <a class="YvFmVCdRxeO0YUiorsUJ" href="https://jika.io" target="_blank" rel="noreferrer">Jika.io</a></p></div></div><div class="vsyyPkGQwaiZSlDO0XI5"><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Fast</h3><p class="I2xo7u5pdkdB6KGg44JD"> My websites have fast loading speed and smooth preformance.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Efficient</h3><p class="I2xo7u5pdkdB6KGg44JD">I am a productive worker and i write clean and efficient code.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Dynamic</h3><p class="I2xo7u5pdkdB6KGg44JD">I love using animations to bring the websites to life.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Responsive</h3><p class="I2xo7u5pdkdB6KGg44JD">My designs fit all screen sizes and support mobile touch actions.</p></div></div><div class="dBhvgJ_y2ghgv8fVihCr"><h3 class="u9RpIke040fWYRkLQDTp">My Knowledge</h3><div class="ywiZwpOMKNhp7mGCL05q"><p class="x2RQuGDpvPK_wtGI_oXU mWSm4bben8MpA4wKIS_5">Git</p><p class="x2RQuGDpvPK_wtGI_oXU ltgjZo04HeQscrzziWbx">Python</p><p class="x2RQuGDpvPK_wtGI_oXU pNXUopvn7iUQm82Ng3nx">CI/CD</p><p class="x2RQuGDpvPK_wtGI_oXU GPPTiVpagKKieBeFFW4T">React</p><p class="x2RQuGDpvPK_wtGI_oXU lbw_Zbcb7uMEYHDgXyLL">NodeJS</p><p class="x2RQuGDpvPK_wtGI_oXU BM7kAPzdUP9w7ObdZSSK">Express</p><p class="x2RQuGDpvPK_wtGI_oXU VgjvcuLwWDke5OmSK28L">ES5/ES6</p></div><div class="O1tvP8Zi3Q2lSAXp6YFE"><label class="Mg4iF3qsdptB9Ge9rA9k" for="speed-range"><input class="s4YN7QdHBkDPWggOF9wj" name="speed-range" id="speed-range" type="range" min="0" max="100"/><div class="Ki89JdtWoBLtXzfke7L3"></div></label></div></div></section><section class="XTv6W1PZzYKy8YJFt5el" id="portfolio"><h2 class="m3GIPUCSOF8rqrvyy3se">My Portfolio</h2><div class="KQGCoT6TnRp6R0eqfd0i"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="90degreegames item details"><img class="fwBOerdSd7CgmZD03esd Gnk6LkzWLI5IA2fCUIX_" src="static/media/90degreegames-logo-new.8ca82ed45501c64f322c.webp" srcSet="" sizes="" height="650" width="450" alt="90degreegames"/></div><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="news-explorer item details"><img class="fwBOerdSd7CgmZD03esd undefined" src="static/media/header-background-tablet.b3cb0f42b5341966e419.webp" srcSet="" sizes="" height="650" width="450" alt="news-explorer"/></div><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="around item details"><img class="fwBOerdSd7CgmZD03esd undefined" src="static/media/around-cover.3d7a07e8af35eb22636d.webp" srcSet="" sizes="" height="650" width="450" alt="around"/></div><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="study item details"><img class="fwBOerdSd7CgmZD03esd undefined" src="static/media/how-to-study-eng-cover.2245a60c9553e390c1bb.webp" srcSet="" sizes="" height="650" width="450" alt="study"/></div><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="across item details"><img class="fwBOerdSd7CgmZD03esd undefined" src="static/media/across-usa-cover.6c6c94ea0857d9c353bf.webp" srcSet="" sizes="" height="650" width="450" alt="across"/></div></div><div class="hEXUpjfiC4eslIQ2hhYX"><div class="OAGlDm_15iXL0QG_PdIE JSxkc660cbp9QbGnzgCV Fv1Hg8HDxYjJxsBJaE_B" id="backwards" role="button" tabindex="0" aria-label="backwards arrow"></div><div class="OAGlDm_15iXL0QG_PdIE JSxkc660cbp9QbGnzgCV q_RC7EY5YXflXV3Cb3C1" id="forwards" role="button" tabindex="0" aria-label="forwards arrow"></div></div><div class="gzvTXotCYgUOYvGPYX3A"><h3 class="aUhgAPTHX5iABkKkVjXW">GitHub Repositories</h3><div class="MyjmUm9tda4D4IvteeuJ"><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Main Worker<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/main-worker" target="_blank" rel="noreferrer">https://github.com/yaniv10501/main-worker</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">How to Study<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/web_project_1" target="_blank" rel="noreferrer">https://github.com/yaniv10501/web_project_1</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Across the USA<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/web_project_3" target="_blank" rel="noreferrer">https://github.com/yaniv10501/web_project_3</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Around the USA<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/react-around-api-full" target="_blank" rel="noreferrer">https://github.com/yaniv10501/react-around-api-full</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">News Exolorer Frontend<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/news-explorer-frontend" target="_blank" rel="noreferrer">https://github.com/yaniv10501/news-explorer-frontend</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">News Exolorer API<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/news-explorer-api" target="_blank" rel="noreferrer">https://github.com/yaniv10501/news-explorer-api</a></div></div></div></section><section class="VVbDXeUKlVOGdfneKkal" id="contact"><div class="dhb6ckbFxlPppllexojz RoOXMALUrekpkqFWMfdE"><i></i></div><form novalidate="" class="uqHKVuHZxJO7Tp91X7Oe"><h2 class="LV7BhjNVk3O_F7r5wTPw">Contact Me</h2><div class="V4ODh_UnfWhmFYK_aKVa"><input required="" class="grj1LLWg4upYxN6rrXTY" name="name" placeholder="Name *" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><div class="V4ODh_UnfWhmFYK_aKVa"><input required="" class="grj1LLWg4upYxN6rrXTY" name="email" placeholder="Email *" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><div class="V4ODh_UnfWhmFYK_aKVa"><input class="grj1LLWg4upYxN6rrXTY" name="phoneNumber" placeholder="Phone Number" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><textarea required="" class="uHAiLZRP1z6TgGgbOhXj" name="message" placeholder="Your Message *" rows="10"></textarea><span class="yrmFNlncHLeRJ44jsAzU"></span><button class="H6YTMIbr1yTCPYD2SFe4" type="submit">Send</button><span class="MzkuKFPRsUT1jv7WESrT" style="color:var(--failColor)"></span></form></section><footer class="JfSrCcibkt3poT_M4n4F"><div class="fcCgzSeIgt4v4WCFF6NX"><nav class="Hy7CwcpyadPGecFqwPyy undefined"><h3 class="LEGL7q0DlixOtSQVCJ3w">About Me</h3><ul class="QbIMiqHohqzdqRpSwZ7V"><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">Yaniv Schweitzer</p></li><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">Jerusalem, Israel</p></li><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">yaniv.sch.fullstack@gmail.com</p></li></ul></nav><nav class="Hy7CwcpyadPGecFqwPyy undefined"><h3 class="LEGL7q0DlixOtSQVCJ3w">Social media</h3><ul class="QbIMiqHohqzdqRpSwZ7V"><li class="RK9UIHizyzYa6AXkNAgI"><a class="pgyKNfWyAqaiJm6wd8uf kN6eIWK1qsIPOBbNrjwW" target="_blank" href="https://github.com/yaniv10501" rel="noreferrer"><img class="Qopu83_xYHGEbehMJOnc" src="static/media/GitHub-Mark-32px.3439a6a02e84402e8867.webp" srcSet="" sizes="" height="" width="" alt="github logo"/>GitHub</a></li><li class="RK9UIHizyzYa6AXkNAgI"><a class="pgyKNfWyAqaiJm6wd8uf kN6eIWK1qsIPOBbNrjwW" target="_blank" href="https://www.linkedin.com/in/yaniv-schweitzer" rel="noreferrer"><img class="Qopu83_xYHGEbehMJOnc" src="static/media/linkedin.8f1daf6628c88ebb4563.webp" srcSet="" sizes="" height="" width="" alt="linkedin logo"/>Linkedin</a></li></ul></nav><div class="Hy7CwcpyadPGecFqwPyy RH2KdmQZHD02UMODVWVt"><p class="giKokWxOL_dB7aRMSNyv">© <!-- -->2023<!-- --> Yaniv Schweitzer</p></div></div></footer></main></div></div></div></body></html>
+</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="b3VOSAYSFlDWnp5MfB7p WD8z_zLKdUF2J_5Kqmg2"><div class="HlpurpQHQSM9ViEFd_GE"><div class="_Jv_CMQPAxkwIc9QA8Lo"><i></i></div><p class="JFzej37NfxIzG1Vqk2dX"></p></div><div class="undefined c0jue6BaoRS2EAbfFq0A"><section class="Tor6Uk4XP3Ub1ikMxGpg" id="home"><div class="WgqsNtBfMYTWIhV8H3sy"><h1 class="CKCi3HOQB12QTdaBVhNQ">Hey, my name is Yaniv Schweitzer.<br/>Welcome to my portfolio website.</h1><img class="YbJ2SbPriAmUA6am0xuD" src="static/media/IMG_6334_edited_edited.39f89cfc8f00b5a964d0.webp" srcSet="" sizes="" height="1125" width="2000" alt="home background"/><div class="OAGlDm_15iXL0QG_PdIE" role="button" tabindex="0" aria-label="home arrow"></div><div class="Ge23s9FM82LXclpZBKwY"></div></div></section><main class="dxYgEFa1dz1bJ_3ItsCO"><header class="ouNk_FM6vaSfMwMZNee5"><nav class="W2VPeK8jBUjBRle20QiD"><button class="ZMonq23OlSFzAV5cCHD_ BYtcP5G5bJMxbcEVTUsj" type="button" aria-label="mobile menu"><div></div></button><button class="Ifqf1UlXAxTtKlXpc0QO" type="button"><img class="B2YqmaYXki9COkWir1F9" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+CjxzdmcgaWQ9IkxheWVyXzFfMV8iIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogIDxjaXJjbGUgY3g9IjguNSIgY3k9IjcuNSIgcj0iNC41IiAvPgogIDxyZWN0IGhlaWdodD0iMiIgd2lkdGg9IjEiIHg9IjgiIC8+CiAgPHJlY3QgaGVpZ2h0PSIyIiB3aWR0aD0iMSIgeD0iOCIgeT0iMTMiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB3aWR0aD0iMiIgeD0iMTQiIHk9IjciIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB3aWR0aD0iMiIgeD0iMSIgeT0iNyIgLz4KICA8cmVjdCBoZWlnaHQ9IjIiIHRyYW5zZm9ybT0ibWF0cml4KDAuNzA3MSAtMC43MDcxIDAuNzA3MSAwLjcwNzEgLTQuNzE3NSAxMi44MDMzKSIgd2lkdGg9IjEiIHg9IjEyLjU5NiIgeT0iMTEuMDk2IiAvPgogIDxyZWN0IGhlaWdodD0iMiIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxIC0wLjcwNzEgMC43MDcxIDAuNzA3MSAtMC45MDk5IDMuNjEwOSkiIHdpZHRoPSIxIiB4PSIzLjQwNCIgeT0iMS45MDQiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEgLTAuNzA3MSAwLjcwNzEgMC43MDcxIC03LjQwOTkgNi4zMDMzKSIgd2lkdGg9IjIiIHg9IjIuOTA0IiB5PSIxMS41OTYiIC8+CiAgPHJlY3QgaGVpZ2h0PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgwLjcwNzEgLTAuNzA3MSAwLjcwNzEgMC43MDcxIDEuNzgyMyAxMC4xMTA3KSIgd2lkdGg9IjIiIHg9IjEyLjA5NiIgeT0iMi40MDQiIC8+Cjwvc3ZnPgo=" alt="theme" height="30" width="30"/></button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#home">Home</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#about">About</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#portfolio">Portfolio</button><button type="button" class="mIyFetrnivsA9pW79H8K" data-link="#contact">Contact</button></nav></header><section class="Dx2pZAm1rfJvkcKSzV2z" id="about"><div class="PwjJB7XdYJ0EtNebJygH"><div class="VU81Y_UEWrG378S2_G3q"><h2 class="wPG9vchu_KyNw9LId1uG">About me</h2></div><div class="_LBV7vtHRXXUH5bPZcgx"><p>I am a Full-Stack Web Developer from Jerusalem, Israel.</p><p>I love programming, challenging myself and researching new fields.</p><p>Currently working at<!-- --> <a class="YvFmVCdRxeO0YUiorsUJ" href="https://jika.io" target="_blank" rel="noreferrer">Jika.io</a></p></div></div><div class="vsyyPkGQwaiZSlDO0XI5"><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Fast</h3><p class="I2xo7u5pdkdB6KGg44JD"> My websites have fast loading speed and smooth preformance.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Efficient</h3><p class="I2xo7u5pdkdB6KGg44JD">I am a productive worker and i write clean and efficient code.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Dynamic</h3><p class="I2xo7u5pdkdB6KGg44JD">I love using animations to bring the websites to life.</p></div><div class="KMi0XduFS2VsPCTFz9Rm"><h3 class="q65EazTkkjJOmtBpNTzb">Responsive</h3><p class="I2xo7u5pdkdB6KGg44JD">My designs fit all screen sizes and support mobile touch actions.</p></div></div><div class="dBhvgJ_y2ghgv8fVihCr"><h3 class="u9RpIke040fWYRkLQDTp">My Knowledge</h3><div class="ywiZwpOMKNhp7mGCL05q"><p class="x2RQuGDpvPK_wtGI_oXU mWSm4bben8MpA4wKIS_5">Git</p><p class="x2RQuGDpvPK_wtGI_oXU ltgjZo04HeQscrzziWbx">Python</p><p class="x2RQuGDpvPK_wtGI_oXU pNXUopvn7iUQm82Ng3nx">CI/CD</p><p class="x2RQuGDpvPK_wtGI_oXU GPPTiVpagKKieBeFFW4T">React</p><p class="x2RQuGDpvPK_wtGI_oXU lbw_Zbcb7uMEYHDgXyLL">NodeJS</p><p class="x2RQuGDpvPK_wtGI_oXU BM7kAPzdUP9w7ObdZSSK">Express</p><p class="x2RQuGDpvPK_wtGI_oXU VgjvcuLwWDke5OmSK28L">ES5/ES6</p></div><div class="O1tvP8Zi3Q2lSAXp6YFE"><label class="Mg4iF3qsdptB9Ge9rA9k" for="speed-range"><input class="s4YN7QdHBkDPWggOF9wj" name="speed-range" id="speed-range" type="range" min="0" max="100"/><div class="Ki89JdtWoBLtXzfke7L3"></div></label></div></div></section><section class="XTv6W1PZzYKy8YJFt5el" id="portfolio"><h2 class="m3GIPUCSOF8rqrvyy3se">My Portfolio</h2><div class="KQGCoT6TnRp6R0eqfd0i"><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="idleduo item details"><img class="fwBOerdSd7CgmZD03esd " src="static/media/idleduo-logo.13a0ea83c96c811a68a6.webp" srcSet="" sizes="" height="650" width="450" alt="idleduo"/></div></div><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="90degreegames item details"><img class="fwBOerdSd7CgmZD03esd Gnk6LkzWLI5IA2fCUIX_" src="static/media/90degreegames-logo-new.8ca82ed45501c64f322c.webp" srcSet="" sizes="" height="650" width="450" alt="90degreegames"/></div></div><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="news-explorer item details"><img class="fwBOerdSd7CgmZD03esd " src="static/media/header-background-tablet.b3cb0f42b5341966e419.webp" srcSet="" sizes="" height="650" width="450" alt="news-explorer"/></div></div><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="around item details"><img class="fwBOerdSd7CgmZD03esd " src="static/media/around-cover.3d7a07e8af35eb22636d.webp" srcSet="" sizes="" height="650" width="450" alt="around"/></div></div><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="study item details"><img class="fwBOerdSd7CgmZD03esd " src="static/media/how-to-study-eng-cover.2245a60c9553e390c1bb.webp" srcSet="" sizes="" height="650" width="450" alt="study"/></div></div><div class="Cl9bkAYeEhIjFbZKbjxw"><div class="lm_fPChAvm1ldIVVDaKg" role="button" tabindex="0" aria-label="across item details"><img class="fwBOerdSd7CgmZD03esd " src="static/media/across-usa-cover.6c6c94ea0857d9c353bf.webp" srcSet="" sizes="" height="650" width="450" alt="across"/></div></div></div><div class="gzvTXotCYgUOYvGPYX3A"><h3 class="aUhgAPTHX5iABkKkVjXW">GitHub Repositories</h3><div class="MyjmUm9tda4D4IvteeuJ"><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Main Worker<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/main-worker" target="_blank" rel="noreferrer">https://github.com/yaniv10501/main-worker</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">How to Study<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/web_project_1" target="_blank" rel="noreferrer">https://github.com/yaniv10501/web_project_1</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Across the USA<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/web_project_3" target="_blank" rel="noreferrer">https://github.com/yaniv10501/web_project_3</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">Around the USA<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/react-around-api-full" target="_blank" rel="noreferrer">https://github.com/yaniv10501/react-around-api-full</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">News Exolorer Frontend<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/news-explorer-frontend" target="_blank" rel="noreferrer">https://github.com/yaniv10501/news-explorer-frontend</a></div><div class="qbOm9K5QQ68Cx7nOk4uO" role="button" tabindex="0"><p class="lY_ojZu_cVbIfDlJtsSb">News Exolorer API<!-- --> GitHub repository</p><a class="Qg_WIJePPKk4qKByuvNR" href="https://github.com/yaniv10501/news-explorer-api" target="_blank" rel="noreferrer">https://github.com/yaniv10501/news-explorer-api</a></div></div></div></section><section class="VVbDXeUKlVOGdfneKkal" id="contact"><div class="dhb6ckbFxlPppllexojz RoOXMALUrekpkqFWMfdE"><i></i></div><form novalidate="" class="uqHKVuHZxJO7Tp91X7Oe"><h2 class="LV7BhjNVk3O_F7r5wTPw">Contact Me</h2><div class="V4ODh_UnfWhmFYK_aKVa"><input required="" class="grj1LLWg4upYxN6rrXTY" name="name" placeholder="Name *" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><div class="V4ODh_UnfWhmFYK_aKVa"><input required="" class="grj1LLWg4upYxN6rrXTY" name="email" placeholder="Email *" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><div class="V4ODh_UnfWhmFYK_aKVa"><input class="grj1LLWg4upYxN6rrXTY" name="phoneNumber" placeholder="Phone Number" value=""/><span class="yrmFNlncHLeRJ44jsAzU"></span></div><textarea required="" class="uHAiLZRP1z6TgGgbOhXj" name="message" placeholder="Your Message *" rows="10"></textarea><span class="yrmFNlncHLeRJ44jsAzU"></span><button class="H6YTMIbr1yTCPYD2SFe4" type="submit">Send</button><span class="MzkuKFPRsUT1jv7WESrT" style="color:var(--failColor)"></span></form></section><footer class="JfSrCcibkt3poT_M4n4F"><div class="fcCgzSeIgt4v4WCFF6NX"><nav class="Hy7CwcpyadPGecFqwPyy undefined"><h3>About Me</h3><ul class="QbIMiqHohqzdqRpSwZ7V"><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">Yaniv Schweitzer</p></li><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">Jerusalem, Israel</p></li><li class="RK9UIHizyzYa6AXkNAgI"><p class="pgyKNfWyAqaiJm6wd8uf">yaniv.sch@icloud.com</p></li></ul></nav><nav class="Hy7CwcpyadPGecFqwPyy undefined"><h3 class="LEGL7q0DlixOtSQVCJ3w">Social media</h3><ul class="QbIMiqHohqzdqRpSwZ7V"><li class="RK9UIHizyzYa6AXkNAgI"><a class="pgyKNfWyAqaiJm6wd8uf kN6eIWK1qsIPOBbNrjwW" target="_blank" href="https://github.com/yaniv10501" rel="noreferrer"><img class="Qopu83_xYHGEbehMJOnc" src="static/media/GitHub-Mark-32px.3439a6a02e84402e8867.webp" srcSet="" sizes="" height="" width="" alt="github logo"/>GitHub</a></li><li class="RK9UIHizyzYa6AXkNAgI"><a class="pgyKNfWyAqaiJm6wd8uf kN6eIWK1qsIPOBbNrjwW" target="_blank" href="https://www.linkedin.com/in/yaniv-schweitzer" rel="noreferrer"><img class="Qopu83_xYHGEbehMJOnc" src="static/media/linkedin.8f1daf6628c88ebb4563.webp" srcSet="" sizes="" height="" width="" alt="linkedin logo"/>Linkedin</a></li></ul></nav><div class="Hy7CwcpyadPGecFqwPyy RH2KdmQZHD02UMODVWVt"><p class="giKokWxOL_dB7aRMSNyv">© <!-- -->2024<!-- --> Yaniv Schweitzer</p></div></div></footer></main></div></div></div></body></html>

@@ -1,15 +1,14 @@
 import styles from '../blocks/home/home.module.css';
 
-const createParticle = (size, options) => {
-  const { color = '50%' } = options;
+const createParticle = (size) => {
   const particle = document.createElement('particle');
   document.querySelector(`.${styles['particles__container']}`).appendChild(particle);
   particle.style.width = `${size}px`;
   particle.style.height = `${size}px`;
-  particle.style.background = `hsl(${Math.random() * 5 + 180}, ${color}, ${
-    options.extra === 'white' ? 100 - Math.random() * 20 : Math.random() * 100
-  }%)`;
-  particle.style.boxShadow = `0 0 5px 5px ${particle.style.background}`;
+  // particle.style.background = `hsl(${Math.random() * 5 + 180}, ${color}, ${
+  //   options.extra === 'white' ? 100 - Math.random() * 20 : Math.random() * 100
+  // }%)`;
+  // particle.style.boxShadow = `0 0 5px 5px ${particle.style.backgroundImage}`;
   return particle;
 };
 
@@ -36,7 +35,7 @@ const randomAnimate = (particle) => {
   );
 };
 const animateParticle = (i) => {
-  const size = Math.floor(Math.random() * 10 + 5);
+  const size = Math.floor(Math.random() * 15 + 5);
   const particle = createParticle(size, { color: '10%', extra: 'white' });
 
   const animation = randomAnimate(particle);
@@ -47,7 +46,7 @@ const animateParticle = (i) => {
   };
 };
 const initParticles = () => {
-  for (let i = 0; i < 50; i += 1) {
+  for (let i = 0; i < 250; i += 1) {
     animateParticle(i);
   }
 };
